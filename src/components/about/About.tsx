@@ -55,7 +55,13 @@ const About: React.FC<Props> = ({
               technologies.map((tec) => <TechListItem key={Math.random()}>{tec}</TechListItem>)
             }
           </TechList>
-          <ContactButton orientation="left" href={`mailto:${email}`}>say hi</ContactButton>
+          <ContactButton
+            aria-label="Contact"
+            orientation="left"
+            href={`mailto:${email}`}
+          >
+            say hi
+          </ContactButton>
         </TextContainer>
       </AboutContainer>
     </VisibilitySensor>

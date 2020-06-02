@@ -25,15 +25,15 @@ const Contact: React.FC<ContactType> = ({
 }) => (
   <Container>
     <Greeting>{greeting}</Greeting>
-    <ContactButton orientation="center" href={`mailto:${mailAdress}`}>{buttonText}</ContactButton>
+    <ContactButton orientation="center" aria-label="Contact" href={`mailto:${mailAdress}`}>{buttonText}</ContactButton>
     <IconContainer>
-      <Icon target="_blank" rel="noopener noreferrer" href={github}>
+      <Icon aria-label="Github" target="_blank" rel="noopener noreferrer" href={github}>
         <FaGithub />
       </Icon>
-      <Icon target="_blank" rel="noopener noreferrer" href={linkedIn}>
+      <Icon aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" href={linkedIn}>
         <FaLinkedin />
       </Icon>
-      <Icon target="_blank" rel="noopener noreferrer" href={insta}>
+      <Icon aria-label="Instagram" target="_blank" rel="noopener noreferrer" href={insta}>
         <FaInstagram />
       </Icon>
     </IconContainer>
