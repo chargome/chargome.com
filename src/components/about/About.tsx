@@ -22,7 +22,7 @@ type Props = AboutType;
 const About: React.FC<Props> = ({
   title,
   content,
-  imagePath,
+  jpg,
   technologies,
   email,
 }) => {
@@ -40,7 +40,7 @@ const About: React.FC<Props> = ({
     >
       <AboutContainer>
         <ImageContainer style={entranceSpring}>
-          <img width="100%" src={`${imagePath}`} alt="Charly Gomez" />
+          <img src={jpg} alt="gomez" width="100%" />
         </ImageContainer>
         <TextContainer style={entranceSpring}>
           <SectionHeading align="left" fontSize={[25, 30, 40]}>

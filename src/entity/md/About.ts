@@ -2,7 +2,8 @@ import { MdContentType } from './MdContent';
 
 export type AboutType = MdContentType & {
   title: string;
-  imagePath: string;
+  jpg: string;
+  webp: string;
   technologies: string[];
   email: string;
 };

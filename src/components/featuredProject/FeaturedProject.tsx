@@ -76,7 +76,7 @@ const FeaturedProject: React.FC<ProjectType> = ({
           <Content
             dangerouslySetInnerHTML={{ __html: content }}
           />
-          <VideoArea autoPlay loop muted playsinline>
+          <VideoArea autoPlay loop muted playsInline>
             <source src={webm} type="video/webm" />
             <source src={mp4} type="video/mp4" />
           </VideoArea>

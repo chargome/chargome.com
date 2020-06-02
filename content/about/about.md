@@ -1,6 +1,7 @@
 ---
 title: About me
-imagePath: /images/gomez.webp
+webp: /images/gomez.webp
+jpg: /images/gomez.jpg
 technologies: ['React', 'NextJS', 'React Native', 'Typescript', 'NodeJS', 'AWS']
 email: charly@fago.solutions
 ---
