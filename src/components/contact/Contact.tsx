@@ -7,12 +7,13 @@ import {
 import {
   Container,
   Greeting,
-  ContactButton,
   IconContainer,
   Icon,
 } from './Contact.css';
 
 import { ContactType } from '../../entity/md/Contact';
+import { ContactButton } from '../../styles/util.css';
+
 
 const Contact: React.FC<ContactType> = ({
   greeting,
@@ -24,16 +25,16 @@ const Contact: React.FC<ContactType> = ({
 }) => (
   <Container>
     <Greeting>{greeting}</Greeting>
-    <ContactButton href={`mailto:${mailAdress}`}>{buttonText}</ContactButton>
+    <ContactButton orientation="center" href={`mailto:${mailAdress}`}>{buttonText}</ContactButton>
     <IconContainer>
-      <Icon target="_blank" rel="noopener noreferrer" href={insta}>
-        <FaInstagram />
-      </Icon>
       <Icon target="_blank" rel="noopener noreferrer" href={github}>
         <FaGithub />
       </Icon>
       <Icon target="_blank" rel="noopener noreferrer" href={linkedIn}>
         <FaLinkedin />
+      </Icon>
+      <Icon target="_blank" rel="noopener noreferrer" href={insta}>
+        <FaInstagram />
       </Icon>
     </IconContainer>
   </Container>

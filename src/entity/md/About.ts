@@ -4,4 +4,5 @@ export type AboutType = MdContentType & {
   title: string;
   imagePath: string;
   technologies: string[];
+  email: string;
 };

@@ -1,10 +1,10 @@
 ---
-title: About
+title: About me
 imagePath: /images/gomez.jpg
 technologies: ['React', 'NextJS', 'React Native', 'Typescript', 'NodeJS', 'AWS']
+email: charly@fago.solutions
 ---
 
-Hey. I am currently living in Vienna, Austria.
-I am co-founder at [FaGo Solutions GmbH](https://www.fago.solutions/).
-In this area Stefanie will write something funny that makes me look charismatic.
+Currently living and coding in Vienna, Austria.
+
 I love building software with:

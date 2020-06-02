@@ -4,7 +4,6 @@ import matter from 'gray-matter';
 import remark from 'remark';
 import html from 'remark-html';
 
-
 export const getPath = (target: string) => (
   path.join(process.cwd(), `content/${target}`)
 );
@@ -64,4 +63,9 @@ export const getProjectData = async () => {
     const fullPath = path.join(projectDir, id);
     return parseMdData(fullPath, id);
   }));
+};
+
+export const getSingleProject = async (id: string) => {
+  const fullPath = path.join(getPath('projects/'), `${id}.md`);
+  return parseMdData(fullPath, id);
 };

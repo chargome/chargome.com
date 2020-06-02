@@ -13,9 +13,14 @@ import {
 
 type Props = ProjectType;
 const ProjectCard: React.FC<Props> = ({
-  id, title, gif, subtitle, technologies, link,
+  id, title, gif, subtitle, technologies, link, featured,
 }) => (
-  <a target="_blank" rel="noopener noreferrer" href={link} key={id}>
+  <a
+    target={featured ? undefined : '_blank'}
+    rel={featured ? undefined : 'noopener noreferrer'}
+    href={link}
+    key={id}
+  >
     <CardContainer>
       <GifArea
         style={{ backgroundImage: `url(${gif})` }}

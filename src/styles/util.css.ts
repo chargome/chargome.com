@@ -41,3 +41,24 @@ export const TechListItem = styled('li')<TechListItemProps>`
     line-height: 20px;
   }
 `;
+
+type ButtonProps = { orientation: 'left' | 'center' };
+export const ContactButton = styled('a')<ButtonProps>`
+  margin-top: 50px;
+  display: grid;
+  width: 100px;
+  justify-self: ${({ orientation }) => (orientation === 'left' ? 'start' : 'center')};;
+  justify-content: center;
+  border-radius: 4px;
+  border: 2px solid ${({ theme }) => theme.colors.greyLight};
+  background-color: ${({ theme }) => theme.colors.tealBlue};
+  color: ${({ theme }) => theme.colors.greyLight};
+  box-shadow: ${({ theme }) => theme.shadows.strong};
+  padding: 10px;
+  transition: 700ms;
+  &:hover {
+    cursor: pointer;
+    background-color: ${({ theme }) => theme.colors.primary};
+    box-shadow: ${({ theme }) => theme.shadows.medium};
+  }
+`;

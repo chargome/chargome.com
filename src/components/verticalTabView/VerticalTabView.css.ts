@@ -9,8 +9,10 @@ export const TabViewContainer = styled.div`
     "nav nav nav nav"
     "content content content content";
   margin: auto;
+  min-height: 50vh;
   color: ${({ theme }) => theme.colors.greyLight};
   @media ${breakpoint.tablet} {
+    min-height: 30vh;
     grid-template-areas:
       "nav content content content"
       "nav content content content";

@@ -13,6 +13,7 @@ import {
   SectionHeading,
   TechList,
   TechListItem,
+  ContactButton,
 } from '../../styles/util.css';
 
 import { AboutType } from '../../entity/md/About';
@@ -23,6 +24,7 @@ const About: React.FC<Props> = ({
   content,
   imagePath,
   technologies,
+  email,
 }) => {
   const [sectionVisible, setSectionVisible] = React.useState(false);
 
@@ -53,6 +55,7 @@ const About: React.FC<Props> = ({
               technologies.map((tec) => <TechListItem key={Math.random()}>{tec}</TechListItem>)
             }
           </TechList>
+          <ContactButton orientation="left" href={`mailto:${email}`}>say hi</ContactButton>
         </TextContainer>
       </AboutContainer>
     </VisibilitySensor>

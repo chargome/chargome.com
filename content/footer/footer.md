@@ -1,1 +1,1 @@
-Built with 💚 and [NextJS](https://nextjs.org) by [FaGo Solutions](http://www.fago.solutions).
+Built with ♥ and [NextJS](https://nextjs.org) by [FaGo Solutions](http://www.fago.solutions).
