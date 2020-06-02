@@ -2,7 +2,8 @@
 title: steffiglocker.com
 subtitle: landing Page
 technologies: [Wordpress, Elementor, AWS Lightsail]
-gif: '/images/steffiglocker.gif'
+mp4: '/images/steffiglocker.mp4'
+webm: '/images/steffiglocker.webm'
 link: 'https://steffiglocker.com'
 ---
 

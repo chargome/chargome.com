@@ -2,7 +2,8 @@
 title: fago.solutions
 subtitle: landing Page
 technologies: [React, Styled-Components, S3, Cloudfront]
-gif: '/images/fago.gif'
+mp4: '/images/fago.mp4'
+webm: '/images/fago.webm'
 link: 'http://www.fago.solutions'
 ---
 

@@ -5,7 +5,7 @@ import { useSpring, useChain, animated } from 'react-spring';
 import { ProjectType } from '../../entity/md/Project';
 import {
   Container,
-  Gif,
+  VideoArea,
   Heading,
   SubHeading,
   Content,
@@ -15,7 +15,8 @@ import {
 const FeaturedProject: React.FC<ProjectType> = ({
   title,
   subtitle,
-  gif,
+  webm,
+  mp4,
   content,
 }) => {
   const arrowRef = React.useRef(null);
@@ -75,7 +76,10 @@ const FeaturedProject: React.FC<ProjectType> = ({
           <Content
             dangerouslySetInnerHTML={{ __html: content }}
           />
-          <Gif style={{ backgroundImage: `url(${gif})` }} />
+          <VideoArea autoPlay loop muted playsinline>
+            <source src={webm} type="video/webm" />
+            <source src={mp4} type="video/mp4" />
+          </VideoArea>
         </animated.div>
       </div>
     </Container>

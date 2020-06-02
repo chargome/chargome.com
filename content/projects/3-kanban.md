@@ -2,7 +2,8 @@
 title: container kanban
 subtitle: custom serverless kanban
 technologies: [React, Redux, Lambda, API Gateway, DynamoDB, Cognito]
-gif: '/images/kanban.gif'
+mp4: '/images/kanban.mp4'
+webm: '/images/kanban.webm'
 link: '/project/kanban'
 featured: true
 ---

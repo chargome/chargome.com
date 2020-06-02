@@ -22,8 +22,9 @@ export const CardContainer = styled('div')`
       "gif gif txt txt txt"
       "gif gif txt txt txt"
       "gif gif txt txt txt";
-    width: 70vw;
+    width: 700px;
     margin: 60px;
+    height: 146px;
     filter: grayscale(100%);
     transition: 700ms;
     &:hover {
@@ -32,16 +33,17 @@ export const CardContainer = styled('div')`
     };
   };
   @media ${breakpoints.laptop} {
-    width: 50vw;
-    min-height: 200px;
+    width: 870px;
+    height: 180px;
   };
+  overflow: hidden;
 `;
 
-export const GifArea = styled('div')`
+export const VideoArea = styled('video')`
   grid-area: gif;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  max-width: 100%;
+  justify-self: center;
+  align-self: center;
   border-radius: 4px 4px 0px 0px;
   box-shadow: ${({ theme }) => theme.shadows.bottomOnly};
   @media ${breakpoints.tablet} {
@@ -53,9 +55,9 @@ export const GifArea = styled('div')`
 export const TextArea = styled('div')`
   padding: 10px;
   display: grid;
-  # justify-content: space-evenly;
-  align-content: start;
-  grid-gap: 10px;
+  z-index: 10;
+  # align-content: center;
+  grid-gap: 0px;
   grid-area: txt;
 `;
 

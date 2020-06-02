@@ -2,7 +2,8 @@
 title: shuttle
 subtitle: real-time container management 
 technologies: [React, Apollo, Lambda, AppSync, DynamoDB]
-gif: '/images/shuttle.gif'
+mp4: '/images/shuttle.mp4'
+webm: '/images/shuttle.webm'
 link: '/project/shuttle'
 featured: true
 ---

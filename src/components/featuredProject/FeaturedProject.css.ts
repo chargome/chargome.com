@@ -48,11 +48,8 @@ export const Content = styled('div')`
   color: ${({ theme }) => theme.colors.primary};
 `;
 
-export const Gif = styled('div')`
+export const VideoArea = styled('video')`
   margin-top: 20px;
   min-height: 200px;
-  min-width: 200px;
-  background-position: center;
-  background-size: contain;
-  background-Repeat: no-repeat;
+  max-width: 100%;
 `;
