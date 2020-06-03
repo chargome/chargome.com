@@ -55,7 +55,6 @@ export const VideoArea = styled('img')`
 export const TextArea = styled('div')`
   padding: 10px;
   display: grid;
-  z-index: 10;
   # align-content: center;
   grid-gap: 0px;
   grid-area: txt;

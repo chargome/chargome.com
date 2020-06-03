@@ -31,7 +31,7 @@ export const MenuContainer = styled(animated.div)<MenuContainerProps>`
   right: 0px;
   height: 100vh;
   background-color: ${(props) => props.theme.colors.greyLight};
-  z-index: 10;
+  z-index: 100;
   ${space}
 `;
 
