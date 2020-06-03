@@ -14,7 +14,7 @@ export const IconContainer = styled.div<IconContainerProps>`
   position: fixed;
   top: 10px;
   right: 10px;
-  z-index: 11;
+  z-index: 16;
   font-size: 30px;
   color: ${(props) => (props.isOpen ? props.theme.colors.primary : props.theme.colors.teaGreen)};
   transition: 700ms;
@@ -31,7 +31,7 @@ export const MenuContainer = styled(animated.div)<MenuContainerProps>`
   right: 0px;
   height: 100vh;
   background-color: ${(props) => props.theme.colors.greyLight};
-  z-index: 100;
+  z-index: 15;
   ${space}
 `;
 

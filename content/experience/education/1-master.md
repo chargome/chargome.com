@@ -11,4 +11,4 @@ link: https://www.technikum-wien.at/en/
 
 - Double Degree with [Marconi University in Rome](https://www.unimarconi.it/)
 
-- Master Thesis: *Development of scalable fullstack web-applications on serverless architectures using GraphQL*
+- Master thesis: *Development of scalable fullstack web-applications on serverless architectures using GraphQL*
