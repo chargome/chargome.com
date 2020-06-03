@@ -15,8 +15,7 @@ import {
 const FeaturedProject: React.FC<ProjectType> = ({
   title,
   subtitle,
-  webm,
-  mp4,
+  gif,
   content,
 }) => {
   const arrowRef = React.useRef(null);
@@ -76,10 +75,7 @@ const FeaturedProject: React.FC<ProjectType> = ({
           <Content
             dangerouslySetInnerHTML={{ __html: content }}
           />
-          <VideoArea autoPlay loop muted playsInline>
-            <source src={webm} type="video/webm" />
-            <source src={mp4} type="video/mp4" />
-          </VideoArea>
+          <VideoArea src={gif} />
         </animated.div>
       </div>
     </Container>

@@ -48,7 +48,7 @@ export const Content = styled('div')`
   color: ${({ theme }) => theme.colors.primary};
 `;
 
-export const VideoArea = styled('video')`
+export const VideoArea = styled('img')`
   margin-top: 20px;
   min-height: 200px;
   max-width: 100%;

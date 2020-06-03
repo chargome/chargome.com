@@ -39,7 +39,7 @@ export const CardContainer = styled('div')`
   overflow: hidden;
 `;
 
-export const VideoArea = styled('video')`
+export const VideoArea = styled('img')`
   grid-area: gif;
   max-width: 100%;
   justify-self: center;
