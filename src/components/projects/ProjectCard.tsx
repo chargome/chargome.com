@@ -13,7 +13,7 @@ import {
 
 type Props = ProjectType;
 const ProjectCard: React.FC<Props> = ({
-  id, title, gif, subtitle, technologies, link, featured,
+  id, title, gif, png, subtitle, technologies, link, featured,
 }) => (
   <a
     aria-label={title}
@@ -23,7 +23,7 @@ const ProjectCard: React.FC<Props> = ({
     key={id}
   >
     <CardContainer>
-      <VideoArea src={gif} />
+      <VideoArea src={gif !== '' ? gif : png} />
       <TextArea>
         <Title>
           {title}

@@ -7,6 +7,7 @@ export type ProjectType = MdContentType & {
   webm: string;
   mp4: string;
   gif: string;
+  png: string;
   featured?: boolean;
   link: string;
 };
