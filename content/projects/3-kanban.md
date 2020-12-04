@@ -5,6 +5,7 @@ technologies: [React, Redux, Lambda, API Gateway, DynamoDB, Cognito]
 mp4: '/images/kanban.mp4'
 webm: '/images/kanban.webm'
 gif: '/images/kanban.gif'
+png: ''
 link: '/project/kanban'
 featured: true
 ---
