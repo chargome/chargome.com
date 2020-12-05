@@ -8,8 +8,8 @@
   },
   "dependencies": {
     "gray-matter": "^4.0.2",
-    "next": "latest",
-    "next-pwa": "^2.5.0",
+    "next": "^10.0.3",
+    "next-pwa": "^2.6.3",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-icons": "^3.10.0",
