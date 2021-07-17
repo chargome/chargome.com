@@ -8,10 +8,10 @@ type Props = {
   projectData: ProjectType;
 };
 
-const Kanban: NextPage<Props> = ({ projectData }) => <FeaturedProject {...projectData} />;
+const Shuttle: NextPage<Props> = ({ projectData }) => <FeaturedProject {...projectData} />;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const projectData = await getSingleProject('4-kanban');
+  const projectData = await getSingleProject('2-meetingpoint');
   return {
     props: {
       projectData,
@@ -19,4 +19,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default Kanban;
+export default Shuttle;
