@@ -12,8 +12,8 @@ import { animated } from 'react-spring';
 type IconContainerProps = LayoutProps & { isOpen: boolean };
 export const IconContainer = styled.div<IconContainerProps>`
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
   z-index: 16;
   font-size: 30px;
   color: ${(props) => (props.isOpen ? props.theme.colors.primary : props.theme.colors.teaGreen)};

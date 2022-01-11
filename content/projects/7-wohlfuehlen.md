@@ -6,7 +6,7 @@ mp4: ''
 webm: ''
 gif: ''
 png: '/images/wohlfuehlen.png'
-link: 'www.wohlfuehlenmitvera.at'
+link: 'https://www.wohlfuehlenmitvera.at'
 ---
 
 Landing Page for [Wohlfühlen mit Vera](www.wohlfuehlenmitvera.com).
