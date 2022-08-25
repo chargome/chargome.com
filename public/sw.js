@@ -1,1 +1,185 @@
-if(!self.define){const e=e=>{"require"!==e&&(e+=".js");let a=Promise.resolve();return i[e]||(a=new Promise(async a=>{if("document"in self){const i=document.createElement("script");i.src=e,document.head.appendChild(i),i.onload=a}else importScripts(e),a()})),a.then(()=>{if(!i[e])throw new Error(`Module ${e} didn’t register its module`);return i[e]})},a=(a,i)=>{Promise.all(a.map(e)).then(e=>i(1===e.length?e[0]:e))},i={require:Promise.resolve(a)};self.define=(a,s,c)=>{i[a]||(i[a]=Promise.resolve().then(()=>{let i={};const n={uri:location.origin+a.slice(1)};return Promise.all(s.map(a=>{switch(a){case"exports":return i;case"module":return n;default:return e(a)}})).then(e=>{const a=c(...e);return i.default||(i.default=a),i})}))}}define("./sw.js",["./workbox-68d819e8"],(function(e){"use strict";importScripts(),e.skipWaiting(),e.clientsClaim(),e.precacheAndRoute([{url:"/",revision:"LamXB-rLjW-mbXbINtdfY"},{url:"/_next/static/LamXB-rLjW-mbXbINtdfY/_buildManifest.js",revision:"29d9369f7d69a95f59d846e1f1c8371b"},{url:"/_next/static/LamXB-rLjW-mbXbINtdfY/_ssgManifest.js",revision:"abee47769bf307639ace4945f9cfd4ff"},{url:"/_next/static/chunks/1bfc9850.a8a974db382a0433b38d.js",revision:"997320e1ea07093451ea2522e1148dcf"},{url:"/_next/static/chunks/24f8a248f6b2b2e34fc354188d6f03f7dfcf3d99.2c7c3079ea2e40fba2cf.js",revision:"7e8b76f978600301326d0f0e4856403c"},{url:"/_next/static/chunks/commons.d485a69c6cc94fe681bd.js",revision:"4f3b0bb718696fe1521c3fd35158853b"},{url:"/_next/static/chunks/d407b114b763764f804888a04d098f41cc52eb75.43010b167106a79869aa.js",revision:"32bf0a73b0494912014650e084719344"},{url:"/_next/static/chunks/framework.1daf1ec1ecf144ee9147.js",revision:"464131074277806cc6187e6c0f264c8e"},{url:"/_next/static/chunks/main-a432545a25382bb4d256.js",revision:"27d97402b81997aa9d7098d3c72ed8e5"},{url:"/_next/static/chunks/pages/_app-f0cd7aa4d37c9efa4eee.js",revision:"4ec7a556650ae735d55206263461203c"},{url:"/_next/static/chunks/pages/_error-dc2196857b0fc29b885b.js",revision:"5d53cfb2c5586bb7c7ab1a4025793a04"},{url:"/_next/static/chunks/pages/index-94ece230e06c357c397f.js",revision:"cd6b93eb04cb27d82f682acbc9a55edb"},{url:"/_next/static/chunks/pages/project/kanban-99d34a7eb8b0e2442df6.js",revision:"bf93547d6a8abb8f394961387cc95787"},{url:"/_next/static/chunks/pages/project/meetingpoint-946e260091b2565914e6.js",revision:"be79e6853e5d8aafef9bd5fb278d572e"},{url:"/_next/static/chunks/pages/project/paketrechner-b3803dc7914f9405277d.js",revision:"c00884e5c31050291a382df1a87fdc66"},{url:"/_next/static/chunks/pages/project/shuttle-ddb02d25a91903ad67b3.js",revision:"f4bc8bc03ea762e5ab24fce3836b37fb"},{url:"/_next/static/chunks/polyfills-555defa4e62ba07d4446.js",revision:"d66b7bb9a3de4c8a45e3a28c2a9c2859"},{url:"/_next/static/chunks/webpack-e067438c4cf4ef2ef178.js",revision:"8c19f623e8389f11131a054a7e17ff95"},{url:"/_next/static/css/d53366f5758282c0c6cb.css",revision:"b7e498e4771358b1482609918c554033"},{url:"/_next/static/media/roboto-mono-all-400-normal.615f3bbd43698e99d078f64a494b3992.woff",revision:"eb2d642c869b81952eb01c9a345bc7cd"},{url:"/_next/static/media/roboto-mono-cyrillic-400-normal.a0d40ee5847af8bed2dfd15bbbcd2a3b.woff2",revision:"be0915f302baacbbc5eec590e5ec861e"},{url:"/_next/static/media/roboto-mono-cyrillic-ext-400-normal.13c026e0294440303c6959727982186b.woff2",revision:"7564d070261aeea6cd5349803590c2fc"},{url:"/_next/static/media/roboto-mono-greek-400-normal.95e7a382e12921ef32ee95a18f8e86fa.woff2",revision:"0919460c360235f2bca4fe76f31969c8"},{url:"/_next/static/media/roboto-mono-latin-400-normal.d3026ee29728abffa752c63a7b4881e7.woff2",revision:"15d3370712cc87aee4d35ba16e639e42"},{url:"/_next/static/media/roboto-mono-latin-ext-400-normal.22aea4e27b4b7405853a82914f2627fa.woff2",revision:"dc56a2577d7c3b0e13e28c44a0d4840c"},{url:"/_next/static/media/roboto-mono-vietnamese-400-normal.a9575edb558363648d813d207076c8cd.woff2",revision:"fc30401e98d303a73e2cd1bd74e68d42"},{url:"/images/fago.gif",revision:"1457feec4b638a2f0d2ac672cee9b734"},{url:"/images/fago.mp4",revision:"13880ba25ee275b5b3809974b5e1c23d"},{url:"/images/fago.webm",revision:"b94ac956e1c325480ba1950622f5cc1c"},{url:"/images/gomez.jpg",revision:"72cb021195bf7ac56536c5a4a3feec2e"},{url:"/images/gomez_1.jpg",revision:"aa021f0b015746217bf0698cc549b49c"},{url:"/images/gomez_1.webp",revision:"ba7a502cf21817d69c7c7d2394f708b2"},{url:"/images/gomez_2.jpg",revision:"c02025fd9ce9cab9e1e3944fd0ee12ed"},{url:"/images/icons/icon-128x128.png",revision:"ed87792f531c9710588648d4129e1e89"},{url:"/images/icons/icon-144x144.png",revision:"42a6c0075c3087c8e0335aadb22da4a3"},{url:"/images/icons/icon-152x152.png",revision:"3a208f63197888eb95222b55c0570f06"},{url:"/images/icons/icon-192x192.png",revision:"6ec8050230ec0d1d5c410b0ff8899df9"},{url:"/images/icons/icon-384x384.png",revision:"ae8846acf9853ad06e1a7a6c31a2107b"},{url:"/images/icons/icon-512x512.png",revision:"5bb3adf5c0994ebf69f99b92ddf8c777"},{url:"/images/icons/icon-72x72.png",revision:"a83b710c835de1b942ae39115d2e5911"},{url:"/images/icons/icon-96x96.png",revision:"ead93d759f0982e33b2f9b3509754c42"},{url:"/images/kanban.gif",revision:"1ff3bcac63ea9f6a83aa04204f5dff55"},{url:"/images/kanban.mp4",revision:"d81c8445c2a7e6afac3386729335fa72"},{url:"/images/kanban.webm",revision:"08278718b55b3879b1f5dd7506db6fe1"},{url:"/images/leitold.gif",revision:"dc5ed892bc0d910a52d8e0050ac4d622"},{url:"/images/leitold.mp4",revision:"c02a6b55fc7ec8061885819e0e4a8fe7"},{url:"/images/leitold.webm",revision:"05964592e0431e7ca14661a2e4d45492"},{url:"/images/meetingpoint.gif",revision:"1a6185de327445a0f47ffa8ea4922d7e"},{url:"/images/paketrechner.gif",revision:"0fd81419fa3eddd9c0c1615053dad530"},{url:"/images/shuttle.gif",revision:"49eee39113452b6018bff6a2982d91c4"},{url:"/images/shuttle.mp4",revision:"a68a4b471b5109df9b5a0f3aa9b02335"},{url:"/images/shuttle.webm",revision:"4ad659ecc31747e5bcb51de92052d1b8"},{url:"/images/steffiglocker.gif",revision:"00d669f6eb71ec3cbf4a06dda14b36ec"},{url:"/images/steffiglocker.mp4",revision:"299c0a873ce7e0129cfe6076929c25f7"},{url:"/images/steffiglocker.webm",revision:"f4f56e3b444df02c64284b1055e7d600"},{url:"/images/textbase.png",revision:"169fc39eb9a4dcdf8f5546b0eec81836"},{url:"/images/wohlfuehlen.png",revision:"b8c64b27a46d57e68e44b1e8e8e2aaa0"},{url:"/manifest.json",revision:"3b2a9f64d3d215e99cddca34314d70d5"},{url:"/slapped.html",revision:"5acf05740d492510343db47b7eafa605"},{url:"/thephonesareworking.html",revision:"3ab42b053b3df8bd9a99c6e3f6a3fadf"}],{ignoreURLParametersMatching:[]}),e.cleanupOutdatedCaches(),e.registerRoute(/^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,new e.CacheFirst({cacheName:"google-fonts",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:31536e3,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/^https:\/\/use\.fontawesome\.com\/releases\/.*/i,new e.CacheFirst({cacheName:"font-awesome",plugins:[new e.ExpirationPlugin({maxEntries:1,maxAgeSeconds:31536e3,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,new e.StaleWhileRevalidate({cacheName:"static-font-assets",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:604800,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,new e.StaleWhileRevalidate({cacheName:"static-image-assets",plugins:[new e.ExpirationPlugin({maxEntries:64,maxAgeSeconds:86400,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/\.(?:js)$/i,new e.StaleWhileRevalidate({cacheName:"static-js-assets",plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/\.(?:css|less)$/i,new e.StaleWhileRevalidate({cacheName:"static-style-assets",plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/\.(?:json|xml|csv)$/i,new e.StaleWhileRevalidate({cacheName:"static-data-assets",plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/\/api\/.*$/i,new e.NetworkFirst({cacheName:"apis",networkTimeoutSeconds:10,plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/\/api\/.*$/i,new e.NetworkFirst({cacheName:"apis",networkTimeoutSeconds:10,plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400,purgeOnQuotaError:!0})]}),"POST"),e.registerRoute(/.*/i,new e.StaleWhileRevalidate({cacheName:"others",plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400,purgeOnQuotaError:!0})]}),"GET")}));
+/**
+ * Copyright 2018 Google Inc. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+// If the loader is already loaded, just stop.
+if (!self.define) {
+  const singleRequire = name => {
+    if (name !== 'require') {
+      name = name + '.js';
+    }
+    let promise = Promise.resolve();
+    if (!registry[name]) {
+      
+        promise = new Promise(async resolve => {
+          if ("document" in self) {
+            const script = document.createElement("script");
+            script.src = name;
+            document.head.appendChild(script);
+            script.onload = resolve;
+          } else {
+            importScripts(name);
+            resolve();
+          }
+        });
+      
+    }
+    return promise.then(() => {
+      if (!registry[name]) {
+        throw new Error(`Module ${name} didn’t register its module`);
+      }
+      return registry[name];
+    });
+  };
+
+  const require = (names, resolve) => {
+    Promise.all(names.map(singleRequire))
+      .then(modules => resolve(modules.length === 1 ? modules[0] : modules));
+  };
+  
+  const registry = {
+    require: Promise.resolve(require)
+  };
+
+  self.define = (moduleName, depsNames, factory) => {
+    if (registry[moduleName]) {
+      // Module is already loading or loaded.
+      return;
+    }
+    registry[moduleName] = Promise.resolve().then(() => {
+      let exports = {};
+      const module = {
+        uri: location.origin + moduleName.slice(1)
+      };
+      return Promise.all(
+        depsNames.map(depName => {
+          switch(depName) {
+            case "exports":
+              return exports;
+            case "module":
+              return module;
+            default:
+              return singleRequire(depName);
+          }
+        })
+      ).then(deps => {
+        const facValue = factory(...deps);
+        if(!exports.default) {
+          exports.default = facValue;
+        }
+        return exports;
+      });
+    });
+  };
+}
+define("./sw.js",['./workbox-3fff7024'], function (workbox) { 'use strict';
+
+  /**
+  * Welcome to your Workbox-powered service worker!
+  *
+  * You'll need to register this file in your web app.
+  * See https://goo.gl/nhQhGp
+  *
+  * The rest of the code is auto-generated. Please don't update this file
+  * directly; instead, make changes to your Workbox build configuration
+  * and re-run your build process.
+  * See https://goo.gl/2aRDsh
+  */
+
+  importScripts();
+  workbox.skipWaiting();
+  workbox.clientsClaim();
+  workbox.registerRoute(/^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i, new workbox.CacheFirst({
+    "cacheName": "google-fonts",
+    plugins: [new workbox.ExpirationPlugin({
+      maxEntries: 4,
+      maxAgeSeconds: 31536000,
+      purgeOnQuotaError: true
+    })]
+  }), 'GET');
+  workbox.registerRoute(/^https:\/\/use\.fontawesome\.com\/releases\/.*/i, new workbox.CacheFirst({
+    "cacheName": "font-awesome",
+    plugins: [new workbox.ExpirationPlugin({
+      maxEntries: 1,
+      maxAgeSeconds: 31536000,
+      purgeOnQuotaError: true
+    })]
+  }), 'GET');
+  workbox.registerRoute(/\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i, new workbox.StaleWhileRevalidate({
+    "cacheName": "static-font-assets",
+    plugins: [new workbox.ExpirationPlugin({
+      maxEntries: 4,
+      maxAgeSeconds: 604800,
+      purgeOnQuotaError: true
+    })]
+  }), 'GET');
+  workbox.registerRoute(/\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i, new workbox.StaleWhileRevalidate({
+    "cacheName": "static-image-assets",
+    plugins: [new workbox.ExpirationPlugin({
+      maxEntries: 64,
+      maxAgeSeconds: 86400,
+      purgeOnQuotaError: true
+    })]
+  }), 'GET');
+  workbox.registerRoute(/\.(?:js)$/i, new workbox.StaleWhileRevalidate({
+    "cacheName": "static-js-assets",
+    plugins: [new workbox.ExpirationPlugin({
+      maxEntries: 16,
+      maxAgeSeconds: 86400,
+      purgeOnQuotaError: true
+    })]
+  }), 'GET');
+  workbox.registerRoute(/\.(?:css|less)$/i, new workbox.StaleWhileRevalidate({
+    "cacheName": "static-style-assets",
+    plugins: [new workbox.ExpirationPlugin({
+      maxEntries: 16,
+      maxAgeSeconds: 86400,
+      purgeOnQuotaError: true
+    })]
+  }), 'GET');
+  workbox.registerRoute(/\.(?:json|xml|csv)$/i, new workbox.StaleWhileRevalidate({
+    "cacheName": "static-data-assets",
+    plugins: [new workbox.ExpirationPlugin({
+      maxEntries: 16,
+      maxAgeSeconds: 86400,
+      purgeOnQuotaError: true
+    })]
+  }), 'GET');
+  workbox.registerRoute(/\/api\/.*$/i, new workbox.NetworkFirst({
+    "cacheName": "apis",
+    "networkTimeoutSeconds": 10,
+    plugins: [new workbox.ExpirationPlugin({
+      maxEntries: 16,
+      maxAgeSeconds: 86400,
+      purgeOnQuotaError: true
+    })]
+  }), 'GET');
+  workbox.registerRoute(/\/api\/.*$/i, new workbox.NetworkFirst({
+    "cacheName": "apis",
+    "networkTimeoutSeconds": 10,
+    plugins: [new workbox.ExpirationPlugin({
+      maxEntries: 16,
+      maxAgeSeconds: 86400,
+      purgeOnQuotaError: true
+    })]
+  }), 'POST');
+  workbox.registerRoute(/.*/i, new workbox.StaleWhileRevalidate({
+    "cacheName": "others",
+    plugins: [new workbox.ExpirationPlugin({
+      maxEntries: 16,
+      maxAgeSeconds: 86400,
+      purgeOnQuotaError: true
+    })]
+  }), 'GET');
+
+});
+//# sourceMappingURL=sw.js.map
