@@ -9,7 +9,7 @@
   "dependencies": {
     "@fontsource/roboto-mono": "^4.5.8",
     "gray-matter": "^4.0.2",
-    "next": "^10.0.3",
+    "next": "^10.2.3",
     "next-pwa": "^5.5.5",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
