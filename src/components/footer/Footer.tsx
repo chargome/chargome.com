@@ -4,7 +4,6 @@ import {
 } from './Footer.css';
 import { FooterType } from '../../entity/md/Footer';
 
-
 const Footer: React.FC<FooterType> = ({ content }) => (
   <Container>
     <ContactArea
