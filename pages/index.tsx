@@ -18,7 +18,6 @@ import { sections } from '../config';
 import { getData, getExperienceData, getProjectData } from '../src/lib/mdLoader';
 import { FooterType } from '../src/entity/md/Footer';
 
-
 type HomeProps = {
   heroData: HeroType;
   aboutData: AboutType;
@@ -75,6 +74,5 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
-
 
 export default Home;

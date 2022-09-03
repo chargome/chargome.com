@@ -3,6 +3,9 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import prism from 'remark-prism';
+
+import { BlogType } from '../entity/md/Blog';
 
 export const getPath = (target: string) => (
   path.join(process.cwd(), `content/${target}`)
@@ -12,12 +15,22 @@ export const parseMdData = async (fullPath: string, id: string) => {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const matterResult = matter(fileContents);
   const processedContent = await remark()
-    .use(html)
+    .use(html, { sanitize: false })
+    .use(prism)
     .process(matterResult.content);
   const content = processedContent.toString();
   return {
     id,
     content,
+    ...matterResult.data,
+  };
+};
+
+export const parseMdMetaData = (fullPath: string, id: string) => {
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const matterResult = matter(fileContents);
+  return {
+    id,
     ...matterResult.data,
   };
 };
@@ -56,16 +69,30 @@ export const getExperienceData = async () => {
   };
 };
 
-export const getProjectData = async () => {
-  const projectDir = getPath('projects/');
-  const projectFiles = fs.readdirSync(projectDir);
-  return Promise.all(projectFiles.map(async (id) => {
-    const fullPath = path.join(projectDir, id);
+export const getFolderData = async (folderPath: string, metaOnly?: boolean) => {
+  const folderDir = getPath(folderPath);
+  const folderFiles = fs.readdirSync(folderDir);
+  return Promise.all(folderFiles.map(async (id) => {
+    const fullPath = path.join(folderDir, id);
+    if (metaOnly) {
+      return parseMdMetaData(fullPath, id);
+    }
     return parseMdData(fullPath, id);
   }));
 };
 
+export const getProjectData = () => getFolderData('projects/');
+
 export const getSingleProject = async (id: string) => {
   const fullPath = path.join(getPath('projects/'), `${id}.md`);
   return parseMdData(fullPath, id);
+};
+
+export const getBlogData = async () => getFolderData('/blog', true);
+
+export const getBlogPostData = async (id: string): Promise<BlogType> => {
+  const fullPath = path.join(getPath('blog/'), `${id}.md`);
+  const mdData = await parseMdData(fullPath, id) as BlogType;
+  // const highlightedContent = await highlightHtml(mdData.content);
+  return mdData;
 };

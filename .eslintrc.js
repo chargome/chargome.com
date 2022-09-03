@@ -13,7 +13,9 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': ['off'],
     'react/prop-types': 'off',
+    'react/require-default-props': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
+    'import/prefer-default-export': 'off',
   },
   globals: {
     React: 'writable',

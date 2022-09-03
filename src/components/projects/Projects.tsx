@@ -10,10 +10,10 @@ import {
 import { ProjectType } from '../../entity/md/Project';
 import ProjectCard from './ProjectCard';
 
-
 type Props = {
   projects: ProjectType[];
 };
+
 const Projects: React.FC<Props> = ({ projects }) => (
   <Container>
     <SectionHeading align="left" mx={[20, 50, 100]} fontSize={[25, 30, 40]}>
