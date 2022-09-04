@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSpring, useTransition, useChain } from 'react-spring';
 import { FaOutdent, FaIndent } from 'react-icons/fa';
+import { useRouter } from 'next/router';
 
 import {
   IconContainer,
@@ -9,11 +10,11 @@ import {
   MenuListItem,
   MenuAnchor,
 } from './Nav.css';
-import { sections as menuItems } from '../../../config';
+import { menuItems } from '../../config';
 
 const Nav: React.FC = () => {
   const [open, setOpen] = React.useState(false);
-
+  const router = useRouter();
   const navRef = React.useRef(null);
   const liRef = React.useRef(null);
 
@@ -24,11 +25,11 @@ const Nav: React.FC = () => {
   });
 
   const liTransitions = useTransition(
-    open ? menuItems.list : [],
+    open ? menuItems : [],
     (item) => item.title,
     {
       ref: liRef,
-      trail: 400 / menuItems.list.length,
+      trail: 400 / menuItems.length,
       from: { opacity: 0, transform: 'translateY(20px)' },
       enter: { opacity: 1, transform: 'translateY(0)' },
       leave: { opacity: 0, transform: 'translateY(20px)' },
@@ -40,12 +41,9 @@ const Nav: React.FC = () => {
     open ? 0.4 : 0.6,
   ]);
 
-  const scrollToSection = (id: string) => {
+  const navigate = (path: string) => {
+    router.push(path);
     setOpen(false);
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView();
-    }
   };
 
   return (
@@ -70,7 +68,7 @@ const Nav: React.FC = () => {
                 style={props}
                 my={[4, 5]}
               >
-                <MenuAnchor onClick={() => scrollToSection(item.id)}>
+                <MenuAnchor onClick={() => navigate(item.path)}>
                   {item.title}
                 </MenuAnchor>
               </MenuListItem>

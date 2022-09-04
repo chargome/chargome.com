@@ -27,11 +27,13 @@ export const IconContainer = styled.div<IconContainerProps>`
 type MenuContainerProps = SpaceProps;
 export const MenuContainer = styled(animated.div)<MenuContainerProps>`
   position: fixed;
-  top: 0px;
-  right: 0px;
-  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 100vh;
   background-color: ${(props) => props.theme.colors.greyLight};
   z-index: 15;
+  overflow: scroll;
   ${space}
 `;
 

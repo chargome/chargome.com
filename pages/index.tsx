@@ -14,7 +14,7 @@ import { AboutType } from '../src/entity/md/About';
 import { ExperienceType } from '../src/entity/md/Experience';
 import { ProjectType } from '../src/entity/md/Project';
 import { ContactType } from '../src/entity/md/Contact';
-import { sections } from '../config';
+import * as sections from '../src/config';
 import { getData, getExperienceData, getProjectData } from '../src/lib/mdLoader';
 import { FooterType } from '../src/entity/md/Footer';
 
