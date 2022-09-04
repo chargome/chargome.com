@@ -1,7 +1,7 @@
 import { Wrapper } from './Typography.css';
 
 interface Props {
-  variant: 'h1' | 'h2' | 'h3' | 'h4' | 'body' | 'bodySm';
+  variant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'body' | 'bodySm';
   children: React.ReactNode;
   align?: 'center' | 'right' | 'left';
   color?: string;
@@ -12,6 +12,7 @@ const HEIGHT_VARIANTS = {
   h2: '1.7rem',
   h3: '1.5rem',
   h4: '1.2rem',
+  h5: '1rem',
   body: '0.9rem',
   bodySm: '0.7rem',
 };

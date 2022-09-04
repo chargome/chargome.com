@@ -30,6 +30,9 @@ export const BlogList = ({ blogs }: Props): JSX.Element => (
             <Typography variant="bodySm" color="teaGreen">
               {blog.datePublished}
             </Typography>
+            <Typography variant="bodySm" color="teaGreen">
+              {` #${blog.tags.join(' #')}`}
+            </Typography>
           </Box>
         </Link>
       </ListItem>

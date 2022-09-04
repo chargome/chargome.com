@@ -1,7 +1,7 @@
 ---
 id: remark-code-highlighting
 title: Setup code highlighting for remark 
-subtitle: Make your code shine bright like a diamond.
+subtitle: Be a bright ass light in this dark ass world
 datePublished: 03-09-2022
 tags: ['react', 'next.js', 'typescript', 'prism']
 ---
@@ -12,7 +12,7 @@ tags: ['react', 'next.js', 'typescript', 'prism']
 
 Out of the box, .md files parsed with [remark](https://remark.js.org/) do not add syntax highlighting to the generated html. For injecting the neccessary styles, we will make use of a popular library that accomplishes this task for us: [Prism](https://prismjs.com/).
 
-This article will show how to use syntax highlighting for your .md file code snippets. Additionally I will show you how to reduce the bundle-size by only including highlighting for selected languages and choosing a color theme.
+This article will show how to use syntax highlighting for your .md file code snippets. You will be able to choose a   theme of your preference.
 
 ## Setup
 
