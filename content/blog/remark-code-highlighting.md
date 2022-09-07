@@ -12,7 +12,7 @@ tags: ['react', 'next.js', 'typescript', 'prism']
 
 Out of the box, .md files parsed with [remark](https://remark.js.org/) do not add syntax highlighting to the generated html. For injecting the neccessary styles, we will make use of a popular library that accomplishes this task for us: [Prism](https://prismjs.com/).
 
-This article will show how to use syntax highlighting for your .md file code snippets. You will be able to choose a   theme of your preference.
+This article will show how to use syntax highlighting for your .md file code snippets. You will be able to choose a theme of your preference.
 
 ## Setup
 
@@ -52,11 +52,17 @@ Alternatively you can include the stylesheet from a cdn:
 ### 2: create your md parser
 For parsing your md files, you have to add the remark-prism library to your remark pipeline:
 ```ts
-const processedContent = await remark()
-    .use(html, { sanitize: false })
-    .use(prism)
-    .process(rawContent);
-return processedContent.toString();
+import { remark } from 'remark';
+import html from 'remark-html';
+import prism from 'remark-prism';
+
+const parseMdContent = (rawContent: string): string => {
+  const processedContent = await remark()
+      .use(html, { sanitize: false })
+      .use(prism)
+      .process(rawContent);
+  return processedContent.toString();
+};
 ```
 &nbsp;
 
@@ -64,6 +70,8 @@ return processedContent.toString();
 The return value now contains the generated html with all classes appropriately set for highlighting using the prism css class we included earlier.
 
 You can check out a full implementation for this website [here](https://github.com/chargome/chargome.com).
+
+I'm gonna be honest here, I just created this article to test out my blog and the syntax highlighting for myself. 🦧
 
 
 
