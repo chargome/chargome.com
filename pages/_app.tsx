@@ -6,6 +6,7 @@ import '@fontsource/roboto-mono';
 import '@fontsource/open-sans';
 
 import GlobalStyle from '../src/styles/globalStyle.css';
+import '../src/styles/globals.css';
 import '../src/styles/prism.css';
 import myTheme from '../src/styles/theme';
 

@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     --greyDark: #787878;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto Mono', monospace;
+    font-family: "Open Sans", sans-serif;
     scroll-behavior: smooth;
   }
 
@@ -21,6 +21,10 @@ const GlobalStyle = createGlobalStyle`
     &:hover {
       color: white;
     }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Roboto Mono", monospace;
   }
 
 `;
