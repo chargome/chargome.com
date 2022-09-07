@@ -8,7 +8,7 @@ import {
 import { BlogPost } from '../../../src/components/blogPost/BlogPost';
 import { BlogType } from '../../../src/entity/md/Blog';
 import { FooterType } from '../../../src/entity/md/Footer';
-import { getBlogData, getBlogPostData, getFolderData } from '../../../src/lib/mdLoader';
+import { getBlogData, getBlogPostData, getData } from '../../../src/lib/mdLoader';
 
 type BlogsPostProps = {
   footerData: FooterType;
@@ -39,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { id } = params as Params;
   const blogPostData = await getBlogPostData(id);
-  const footerData = await getFolderData('footer');
+  const footerData = await getData('footer');
   return {
     props: {
       blogPostData,

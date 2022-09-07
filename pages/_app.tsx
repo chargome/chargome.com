@@ -3,6 +3,7 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
 import '@fontsource/roboto-mono';
+import '@fontsource/open-sans';
 
 import GlobalStyle from '../src/styles/globalStyle.css';
 import '../src/styles/prism.css';
