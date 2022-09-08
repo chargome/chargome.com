@@ -9,7 +9,7 @@ const VARIANTS = {
 };
 
 export const SectionHeading = ({ align, children }: Props): JSX.Element => (
-  <h2 className={`text-3xl font-mono text-primary p-2 border-secondary ${VARIANTS[align]}`}>
+  <h2 className={`text-3xl my-4 font-mono text-primary p-2 border-secondary ${VARIANTS[align]}`}>
     {children}
   </h2>
 );

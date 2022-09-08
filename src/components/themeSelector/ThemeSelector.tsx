@@ -25,14 +25,15 @@ export const ThemeSelector = (): JSX.Element => {
             {
               themes.map((theme) => (
                 <div
+                  role="button"
                   key={theme.key}
                   tabIndex={0}
-                  onKeyPress={(e) => (e.key === 'enter' ? setColorTheme(theme.key) : null)}
+                  onKeyPress={(e) => (e.key === 'Enter' ? setColorTheme(theme.key) : null)}
                   onClick={() => setColorTheme(theme.key)}
                 >
                   <ThemePreview
                     name={theme.key}
-                    icon={theme.icon} 
+                    icon={theme.icon}
                     primary={theme.primary}
                     bg={theme.base}
                     active={colorTheme === theme.key}

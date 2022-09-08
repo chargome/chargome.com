@@ -42,7 +42,7 @@ export const About = ({
         </div>
         <div
           style={entranceSpring}
-          className="mx-8 flex flex-col gap-2"
+          className="px-4 flex flex-col gap-2"
         >
           <SectionHeading align="left">
             {title}

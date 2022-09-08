@@ -46,7 +46,7 @@ export const Nav: React.FC = () => {
       <div
         className="fixed top-5 right-5 z-30 transition cursor-pointer text-primary"
         onClick={() => setOpen((_open) => !_open)}
-        onKeyPress={(e) => (e.key === 'enter' ? setOpen((_open) => !_open) : null)}
+        onKeyPress={(e) => (e.key === 'Enter' ? setOpen((_open) => !_open) : null)}
         tabIndex={0}
         role="button"
       >
@@ -73,7 +73,7 @@ export const Nav: React.FC = () => {
                 <div
                   className="w-40 mx-auto no-underline flex justify-center p-1 border-y-2 border-transparent transition-all text-primary cursor-pointer hover:text-accent hover:border-accent"
                   onClick={() => navigate(item.path)}
-                  onKeyPress={(e) => (e.key === 'enter' ? navigate(item.path) : null)}
+                  onKeyPress={(e) => (e.key === 'Enter' ? navigate(item.path) : null)}
                   tabIndex={0}
                   role="button"
                 >

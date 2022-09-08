@@ -1,16 +1,5 @@
 import React from 'react';
 
-import {
-  TabViewContainer,
-  NavContainer,
-  NavElement,
-  ContentContainer,
-  ContentHeading,
-  SubHeading,
-  ContentRange,
-  ContentText,
-} from './VerticalTabView.css';
-
 export type ElementType = {
   id: string;
   title: string;
@@ -21,35 +10,40 @@ export type ElementType = {
   link: string;
 };
 
-type Props = {
+interface Props {
   elements: ElementType[];
-};
+}
 
-const VerticalTabView: React.FC<Props> = ({ elements }) => {
+export const VerticalTabView = ({ elements }: Props): JSX.Element => {
   const [selectedElement, setSelectedElement] = React.useState<ElementType>(elements[0]);
 
-  const renderElement = (element: ElementType) => (
-    <NavElement
-      key={element.id}
-      onClick={() => { setSelectedElement(element); }}
-      active={element.id === selectedElement.id}
-    >
-      { element.title }
-    </NavElement>
-  );
-
   return (
-    <TabViewContainer>
-      <NavContainer>
-        { elements.map(renderElement) }
-      </NavContainer>
-      <ContentContainer>
-        <ContentHeading>{selectedElement.heading}</ContentHeading>
-        <SubHeading href={selectedElement.link}>{`@${selectedElement.subHeading}`}</SubHeading>
-        <ContentRange>{selectedElement.dateRange}</ContentRange>
-        <ContentText dangerouslySetInnerHTML={{ __html: selectedElement.html }} />
-      </ContentContainer>
-    </TabViewContainer>
+    <div className="flex flex-col md:flex-row ">
+      <div className="flex flex-col">
+        { elements.map((element) => (
+          <div
+            key={element.id}
+            className={`p-2 px-6 flex border-r-2 ${
+              element.id === selectedElement.id
+                ? 'border-primary bg-primary bg-opacity-30'
+                : 'border-secondary'
+            }`}
+            onClick={() => { setSelectedElement(element); }}
+            onKeyPress={(e) => (e.key === 'Enter' ? setSelectedElement(element) : null)}
+            role="button"
+            tabIndex={0}
+          >
+            { element.title }
+          </div>
+        )) }
+      </div>
+      <div className="p-4 md:p-10">
+        <h3 className="text-lg font-mono text-accent">{selectedElement.heading}</h3>
+        <a className="text-md font-mono text-secondary" href={selectedElement.link}>{`@${selectedElement.subHeading}`}</a>
+        <h4 className="text-sm font-mono text-secondary">{selectedElement.dateRange}</h4>
+        <p className="pt-2 prose" dangerouslySetInnerHTML={{ __html: selectedElement.html }} />
+      </div>
+    </div>
   );
 };
 
