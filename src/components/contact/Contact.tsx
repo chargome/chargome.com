@@ -12,7 +12,7 @@ import {
 } from './Contact.css';
 
 import { ContactType } from '../../model/md/Contact';
-import { ContactButton } from '../../styles/util.css';
+import { Button } from '../button';
 
 const Contact: React.FC<ContactType> = ({
   greeting,
@@ -24,7 +24,9 @@ const Contact: React.FC<ContactType> = ({
 }) => (
   <Container>
     <Greeting>{greeting}</Greeting>
-    <ContactButton orientation="center" aria-label="Contact" href={`mailto:${mailAdress}`}>{buttonText}</ContactButton>
+    <a href={`mailto:${mailAdress}`}>
+      <Button aria-label="Contact">{buttonText}</Button>
+    </a>
     <IconContainer>
       <Icon aria-label="Github" target="_blank" rel="noopener noreferrer" href={github}>
         <FaGithub />

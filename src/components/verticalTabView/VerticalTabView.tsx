@@ -38,10 +38,16 @@ export const VerticalTabView = ({ elements }: Props): JSX.Element => {
         )) }
       </div>
       <div className="p-4 md:p-10">
-        <h3 className="text-lg font-mono text-accent">{selectedElement.heading}</h3>
-        <a className="text-md font-mono text-secondary" href={selectedElement.link}>{`@${selectedElement.subHeading}`}</a>
-        <h4 className="text-sm font-mono text-secondary">{selectedElement.dateRange}</h4>
-        <p className="pt-2 prose" dangerouslySetInnerHTML={{ __html: selectedElement.html }} />
+        <h3 className="text-lg font-mono text-accent">
+          {selectedElement.heading}
+        </h3>
+        <a className="text-md font-mono text-secondary" href={selectedElement.link}>
+          {`@${selectedElement.subHeading}`}
+        </a>
+        <h4 className="text-sm font-mono text-secondary">
+          {selectedElement.dateRange}
+        </h4>
+        <div className="pt-2 prose" dangerouslySetInnerHTML={{ __html: selectedElement.html }} />
       </div>
     </div>
   );

@@ -40,7 +40,7 @@ export const Experience = ({ workData, eduData }: ExperienceType): JSX.Element =
       offset={{ bottom: 10 }}
       onChange={(visible) => setIsVisible(visible)}
     >
-      <div className="min-h-screen bg-base-100 px-10 lg:px-20">
+      <div className="min-h-screen bg-base-100 mx-4 md:mx-10 lg:mx-20 xl:mx-40">
         <animated.div style={entranceSpring}>
           <div className="min-h-screen">
             <SectionHeading align="left">
