@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BlogType } from '../../entity/md/Blog';
+import { BlogType } from '../../model/md/Blog';
 import { Box } from '../box';
 import { Typography } from '../typography';
 import { List, ListItem } from './BlogList.css';

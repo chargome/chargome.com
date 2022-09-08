@@ -11,9 +11,8 @@ import {
   Icon,
 } from './Contact.css';
 
-import { ContactType } from '../../entity/md/Contact';
+import { ContactType } from '../../model/md/Contact';
 import { ContactButton } from '../../styles/util.css';
-
 
 const Contact: React.FC<ContactType> = ({
   greeting,

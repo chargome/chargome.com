@@ -16,6 +16,7 @@ module.exports = {
     'react/require-default-props': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     'import/prefer-default-export': 'off',
+    'react/no-danger': 'off',
   },
   globals: {
     React: 'writable',

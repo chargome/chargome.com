@@ -9,14 +9,15 @@ import {
   Projects,
   Contact,
 } from '../src/components';
-import { HeroType } from '../src/entity/md/Hero';
-import { AboutType } from '../src/entity/md/About';
-import { ExperienceType } from '../src/entity/md/Experience';
-import { ProjectType } from '../src/entity/md/Project';
-import { ContactType } from '../src/entity/md/Contact';
+import { HeroType } from '../src/model/md/Hero';
+import { AboutType } from '../src/model/md/About';
+import { ExperienceType } from '../src/model/md/Experience';
+import { ProjectType } from '../src/model/md/Project';
+import { ContactType } from '../src/model/md/Contact';
 import * as sections from '../src/config';
 import { getData, getExperienceData, getProjectData } from '../src/lib/mdLoader';
-import { FooterType } from '../src/entity/md/Footer';
+import { FooterType } from '../src/model/md/Footer';
+import { PageLayout } from '../src/layout';
 
 type HomeProps = {
   heroData: HeroType;
@@ -35,8 +36,7 @@ const Home: NextPage<HomeProps> = ({
   contactData,
   footerData,
 }) => (
-  <>
-    <Nav />
+  <PageLayout footerData={footerData}>
     <section id={sections.HERO}>
       <Hero {...heroData} />
     </section>
@@ -52,8 +52,7 @@ const Home: NextPage<HomeProps> = ({
     <section id={sections.CONTACT}>
       <Contact {...contactData} />
     </section>
-    <Footer {...footerData} />
-  </>
+  </PageLayout>
 );
 
 export const getStaticProps: GetStaticProps = async () => {

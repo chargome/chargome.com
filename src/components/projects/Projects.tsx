@@ -7,7 +7,7 @@ import {
 import {
   SectionHeading,
 } from '../../styles/util.css';
-import { ProjectType } from '../../entity/md/Project';
+import { ProjectType } from '../../model/md/Project';
 import ProjectCard from './ProjectCard';
 
 type Props = {

@@ -16,7 +16,7 @@ import {
   ContactButton,
 } from '../../styles/util.css';
 
-import { AboutType } from '../../entity/md/About';
+import { AboutType } from '../../model/md/About';
 
 type Props = AboutType;
 const About: React.FC<Props> = ({

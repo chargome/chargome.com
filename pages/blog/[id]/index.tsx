@@ -1,13 +1,10 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 
-import {
-  Nav,
-  Footer,
-} from '../../../src/components';
 import { BlogPost } from '../../../src/components/blogPost/BlogPost';
-import { BlogType } from '../../../src/entity/md/Blog';
-import { FooterType } from '../../../src/entity/md/Footer';
+import { BlogType } from '../../../src/model/md/Blog';
+import { FooterType } from '../../../src/model/md/Footer';
+import { PageLayout } from '../../../src/layout';
 import { getBlogData, getBlogPostData, getData } from '../../../src/lib/mdLoader';
 
 type BlogsPostProps = {
@@ -20,11 +17,9 @@ interface Params extends ParsedUrlQuery {
 }
 
 const Blogs: NextPage<BlogsPostProps> = ({ footerData, blogPostData }) => (
-  <>
-    <Nav />
+  <PageLayout footerData={footerData}>
     <BlogPost data={blogPostData} />
-    <Footer {...footerData} />
-  </>
+  </PageLayout>
 );
 
 export const getStaticPaths: GetStaticPaths = async () => {

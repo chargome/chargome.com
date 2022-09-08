@@ -1,6 +1,6 @@
 import { NextPage, GetStaticProps } from 'next';
 
-import { ProjectType } from '../../src/entity/md/Project';
+import { ProjectType } from '../../src/model/md/Project';
 import { getSingleProject } from '../../src/lib/mdLoader';
 import { FeaturedProject } from '../../src/components';
 

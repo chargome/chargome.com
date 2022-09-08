@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  * {
+* {
     --primary: #00272b;
     --secondary: #70a9a1;
     --teaGreen: #cfe0c3;

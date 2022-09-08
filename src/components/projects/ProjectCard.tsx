@@ -1,4 +1,4 @@
-import { ProjectType } from '../../entity/md/Project';
+import { ProjectType } from '../../model/md/Project';
 import {
   CardContainer,
   VideoArea,

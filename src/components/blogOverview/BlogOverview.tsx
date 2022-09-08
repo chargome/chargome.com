@@ -1,4 +1,4 @@
-import { BlogType } from '../../entity/md/Blog';
+import { BlogType } from '../../model/md/Blog';
 import { BlogList } from '../blogList/BlogList';
 import { Box } from '../box/Box.css';
 import { Typography } from '../typography';

@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
-// import './Particles';
 type Particle = {
   vx: number;
   vy: number;
@@ -10,32 +9,28 @@ type Particle = {
   oy: number;
 };
 
-const Particles = () => {
+interface Props {
+  darkParticles: boolean;
+}
+
+const Particles = ({ darkParticles }: Props) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
   React.useEffect(() => {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
-    const SPACING = 70;
+    const SPACING = 20;
     const MARGIN = 20;
     const COLS = (screenWidth - MARGIN * 2) / SPACING;
     const ROWS = (screenHeight - MARGIN * 2) / SPACING;
     const NUM_PARTICLES = ROWS * COLS;
-    const THICKNESS = 150 ** 2;
-    const COLOR = 250;
+    const THICKNESS = 80 ** 2;
+    const COLOR = darkParticles ? 20 : 200;
     const DRAG = 0.95;
     const EASE = 0.25;
-
-    /*
-
-    used for sine approximation, but Math.sin in Chrome is still fast enough :)http://jsperf.com/math-sin-vs-sine-approximation
-
-    B = 4 / Math.PI,
-    C = -4 / Math.pow( Math.PI, 2 ),
-    P = 0.225,
-
-    */
-
-    let container: HTMLElement | null;
-    let canvas;
+    const container = containerRef.current as HTMLDivElement;
+    const canvas = canvasRef.current as HTMLCanvasElement;
     let list: Particle[];
     let ctx: CanvasRenderingContext2D | null;
     let tog: boolean;
@@ -56,9 +51,15 @@ const Particles = () => {
       y: 0,
     };
 
+    function setBounds(e: MouseEvent) {
+      if (container) {
+        const bounds = container.getBoundingClientRect();
+        mx = e.clientX - bounds.left;
+        my = e.clientY - bounds.top;
+      }
+    }
+
     function init() {
-      container = document.getElementById('particle-container');
-      canvas = document.createElement('canvas');
       ctx = canvas.getContext('2d');
       tog = true;
 
@@ -86,13 +87,7 @@ const Particles = () => {
       if (container) {
         // container.style.marginLeft = `${Math.round(w * -0.5)}px`;
         // container.style.marginTop = `${Math.round(h * -0.5)}px`;
-        container.addEventListener('mousemove', (e) => {
-          if (container) {
-            const bounds = container.getBoundingClientRect();
-            mx = e.clientX - bounds.left;
-            my = e.clientY - bounds.top;
-          }
-        });
+        container.addEventListener('mousemove', setBounds);
         container.appendChild(canvas);
       }
     }
@@ -134,9 +129,17 @@ const Particles = () => {
 
     init();
     step();
-  });
 
-  return <div style={{ position: 'absolute', top: '0px' }} id="particle-container" />;
+    return () => {
+      container.removeEventListener('mousemove', setBounds, false);
+    };
+  }, [darkParticles]);
+
+  return (
+    <div ref={containerRef} style={{ position: 'absolute', top: '0px' }}>
+      <canvas ref={canvasRef} />
+    </div>
+  );
 };
 
 export default Particles;

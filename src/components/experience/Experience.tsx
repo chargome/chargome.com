@@ -5,7 +5,7 @@ import VisibilitySensor from 'react-visibility-sensor';
 import {
   Container,
 } from './Experience.css';
-import { ExperienceType } from '../../entity/md/Experience';
+import { ExperienceType } from '../../model/md/Experience';
 import VerticalTabs, { ElementType } from '../verticalTabView/VerticalTabView';
 import { SectionHeading } from '../../styles/util.css';
 

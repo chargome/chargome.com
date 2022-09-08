@@ -1,13 +1,10 @@
 import { NextPage, GetStaticProps } from 'next';
 
-import {
-  Nav,
-  Footer,
-} from '../../src/components';
-import { BlogType } from '../../src/entity/md/Blog';
+import { BlogType } from '../../src/model/md/Blog';
 import { getBlogData, getData } from '../../src/lib/mdLoader';
-import { FooterType } from '../../src/entity/md/Footer';
+import { FooterType } from '../../src/model/md/Footer';
 import { BlogOverview } from '../../src/components/blogOverview/BlogOverview';
+import { PageLayout } from '../../src/layout';
 
 type BlogsProps = {
   blogData: BlogType[];
@@ -15,11 +12,9 @@ type BlogsProps = {
 };
 
 const Blogs: NextPage<BlogsProps> = ({ blogData, footerData }) => (
-  <>
-    <Nav />
+  <PageLayout footerData={footerData}>
     <BlogOverview data={blogData} />
-    <Footer {...footerData} />
-  </>
+  </PageLayout>
 );
 
 export const getStaticProps: GetStaticProps = async () => {

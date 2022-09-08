@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSpring, useTransition, useChain } from 'react-spring';
+import { useSpring, useTransition, useChain, animated } from 'react-spring';
 import { FaOutdent, FaIndent } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 
@@ -48,34 +48,48 @@ const Nav: React.FC = () => {
 
   return (
     <>
-      <IconContainer
-        isOpen={open}
+      <div
+        className="fixed top-5 right-5 z-30 transition cursor-pointer text-primary"
         onClick={() => setOpen((_open) => !_open)}
+        onKeyPress={(e) => (e.key === 'enter' ? setOpen((_open) => !_open) : null)}
+        tabIndex={0}
+        role="button"
         // style={iconSpring}
       >
-        {open ? <FaIndent /> : <FaOutdent />}
-      </IconContainer>
-      <MenuContainer style={menuContainerSpring}>
-        <MenuList
-          textAlign="center"
-          fontSize={[20, 30, 40]}
-          fontWeight="bold"
+        {
+          open
+            ? <FaIndent className="w-7 h-7" />
+            : <FaOutdent className="w-7 h-7" />
+        }
+      </div>
+      <animated.div
+        style={menuContainerSpring}
+        className="fixed top-0 right-0 bottom-0 min-h-screen bg-secondary z-10 overflow-scroll"
+      >
+        <ul
+          className="list-none text-center text-3xl font-bold"
         >
           {
             liTransitions.map(({ item, key, props }) => (
-              <MenuListItem
+              <animated.li
+                className="my-14"
                 key={key}
                 style={props}
-                my={[4, 5]}
               >
-                <MenuAnchor onClick={() => navigate(item.path)}>
+                <div
+                  className="w-40 mx-auto no-underline flex justify-center p-1 border-y-2 border-transparent transition-all text-primary cursor-pointer hover:text-accent hover:border-accent"
+                  onClick={() => navigate(item.path)}
+                  onKeyPress={(e) => (e.key === 'enter' ? navigate(item.path) : null)}
+                  tabIndex={0}
+                  role="button"
+                >
                   {item.title}
-                </MenuAnchor>
-              </MenuListItem>
+                </div>
+              </animated.li>
             ))
           }
-        </MenuList>
-      </MenuContainer>
+        </ul>
+      </animated.div>
     </>
   );
 };

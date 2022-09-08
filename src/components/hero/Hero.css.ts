@@ -8,11 +8,7 @@ import {
 } from 'styled-system';
 
 export const HeroContainer = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: grid;
-  background-color: ${({ theme }) => theme.colors.primary};
-  background-attachment: fixed;
+  
 `;
 
 type TextContainerProps = LayoutProps;

@@ -5,7 +5,7 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import prism from 'remark-prism';
 
-import { BlogType } from '../entity/md/Blog';
+import { BlogType } from '../model/md/Blog';
 
 export const getPath = (target: string) => (
   path.join(process.cwd(), `content/${target}`)

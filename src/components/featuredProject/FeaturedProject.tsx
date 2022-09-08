@@ -2,7 +2,7 @@ import React from 'react';
 import Router from 'next/router';
 import { useSpring, useChain, animated } from 'react-spring';
 
-import { ProjectType } from '../../entity/md/Project';
+import { ProjectType } from '../../model/md/Project';
 import {
   Container,
   VideoArea,

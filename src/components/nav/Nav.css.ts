@@ -24,19 +24,6 @@ export const IconContainer = styled.div<IconContainerProps>`
   ${layout}
 `;
 
-type MenuContainerProps = SpaceProps;
-export const MenuContainer = styled(animated.div)<MenuContainerProps>`
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  min-height: 100vh;
-  background-color: ${(props) => props.theme.colors.greyLight};
-  z-index: 15;
-  overflow: scroll;
-  ${space}
-`;
-
 type MenuListProps = TypographyProps;
 export const MenuList = styled.ul<MenuListProps>`
   list-style-type: none;
