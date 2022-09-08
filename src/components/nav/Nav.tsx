@@ -1,18 +1,13 @@
 import React from 'react';
-import { useSpring, useTransition, useChain, animated } from 'react-spring';
+import {
+  useSpring, useTransition, useChain, animated,
+} from 'react-spring';
 import { FaOutdent, FaIndent } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 
-import {
-  IconContainer,
-  MenuContainer,
-  MenuList,
-  MenuListItem,
-  MenuAnchor,
-} from './Nav.css';
 import { menuItems } from '../../config';
 
-const Nav: React.FC = () => {
+export const Nav: React.FC = () => {
   const [open, setOpen] = React.useState(false);
   const router = useRouter();
   const navRef = React.useRef(null);
@@ -54,7 +49,6 @@ const Nav: React.FC = () => {
         onKeyPress={(e) => (e.key === 'enter' ? setOpen((_open) => !_open) : null)}
         tabIndex={0}
         role="button"
-        // style={iconSpring}
       >
         {
           open
@@ -93,5 +87,3 @@ const Nav: React.FC = () => {
     </>
   );
 };
-
-export default Nav;

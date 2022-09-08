@@ -1,4 +1,4 @@
-import Nav from './nav/Nav';
+import { Nav } from './nav';
 import Footer from './footer/Footer';
 import Hero from './hero/Hero';
 import About from './about/About';
