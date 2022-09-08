@@ -1,5 +1,6 @@
 ---
 introduction: 'Buenos dias amigos, I am'
+introductionItaliano: 'Buongiorno ragazzi, io sono'
 firstName: 'Charly'
 lastName: 'Gomez'
 ---
