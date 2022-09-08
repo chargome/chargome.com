@@ -65,7 +65,7 @@ const Hero: React.FC<Props> = ({
         </animated.h2>
         <animated.h1
           style={titleSpring}
-          className="text-6xl text-primary"
+          className="text-6xl text-primary font-mono"
         >
           {`${firstName} ${lastName}.`}
         </animated.h1>

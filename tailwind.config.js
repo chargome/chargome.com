@@ -15,7 +15,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'mono': ["'Roboto Mono', monospace"]
+      }
+    },
   },
   darkMode: ['class', '[data-theme="dark"]'],
   plugins: [
@@ -26,10 +30,10 @@ module.exports = {
     themes: [
       {
         light: {
-          ...require("daisyui/src/colors/themes")["[data-theme=emerald]"],
-          primary: '#cfe0c3',
-          secondary: '#40798c',
-          accent: '#70a9a1',
+          ...require("daisyui/src/colors/themes")["[data-theme=lofi]"],
+          // primary: '#006e8f',
+          secondary: '#5998aa',
+          // accent: '#006e8f',
           ...ANIMATION,
         },
       },

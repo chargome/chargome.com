@@ -3,20 +3,10 @@ import React from 'react';
 import { useSpring } from 'react-spring';
 import VisibilitySensor from 'react-visibility-sensor';
 
-import {
-  AboutContainer,
-  TextContainer,
-  AboutText,
-  ImageContainer,
-} from './About.css';
-import {
-  SectionHeading,
-  TechList,
-  TechListItem,
-  ContactButton,
-} from '../../styles/util.css';
+import { SectionHeading } from '../sectionHeading';
 
 import { AboutType } from '../../model/md/About';
+import { Button } from '../button';
 
 type Props = AboutType;
 const About: React.FC<Props> = ({
@@ -38,32 +28,48 @@ const About: React.FC<Props> = ({
       offset={{ bottom: 10 }}
       onChange={(visible) => setSectionVisible(visible)}
     >
-      <AboutContainer>
-        <ImageContainer style={entranceSpring}>
-          <img src={jpg} alt="gomez" width="100%" />
-        </ImageContainer>
-        <TextContainer style={entranceSpring}>
-          <SectionHeading align="left" fontSize={[25, 30, 40]}>
+      <div
+        className="bg-base-100 min-h-screen flex flex-col md:flex-row items-center justify-center"
+      >
+        <div
+          style={entranceSpring}
+        >
+          <img
+            src={jpg}
+            alt="gomez"
+            width="100%"
+            className="w-80 rounded-sm transition shadow-lg grayscale hover:grayscale-0"
+          />
+        </div>
+        <div
+          style={entranceSpring}
+          className="mx-8 flex flex-col gap-2"
+        >
+          <SectionHeading align="left">
             {title}
           </SectionHeading>
-          <AboutText
-            fontSize={[15, 18]}
-            dangerouslySetInnerHTML={{ __html: content }}
-          />
-          <TechList>
-            {
-              technologies.map((tec) => <TechListItem key={Math.random()}>{tec}</TechListItem>)
-            }
-          </TechList>
-          <ContactButton
-            aria-label="Contact"
-            orientation="left"
-            href={`mailto:${email}`}
-          >
-            say hi
-          </ContactButton>
-        </TextContainer>
-      </AboutContainer>
+          <div className="pl-5">
+            <div
+              className="text-md text-accent"
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
+            <ul className="no-underline pl-5 text-accent mb-5">
+              {
+                technologies.map((tec) => (
+                  <li className="font-mono" key={tec}>{`> ${tec}`}</li>
+                ))
+              }
+            </ul>
+            <a href={`mailto:${email}`}>
+              <Button
+                aria-label="Contact"
+              >
+                say hi
+              </Button>
+            </a>
+          </div>
+        </div>
+      </div>
     </VisibilitySensor>
   );
 };
