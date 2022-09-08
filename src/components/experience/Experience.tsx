@@ -9,9 +9,7 @@ import { ExperienceType } from '../../model/md/Experience';
 import VerticalTabs, { ElementType } from '../verticalTabView/VerticalTabView';
 import { SectionHeading } from '../../styles/util.css';
 
-
-type Props = ExperienceType;
-const Experience: React.FC<Props> = ({ workData, eduData }) => {
+export const Experience = ({ workData, eduData }: ExperienceType): JSX.Element => {
   const [isVisible, setIsVisible] = React.useState(false);
 
   const entranceSpring = useSpring({
@@ -59,5 +57,3 @@ const Experience: React.FC<Props> = ({ workData, eduData }) => {
     </VisibilitySensor>
   );
 };
-
-export default Experience;

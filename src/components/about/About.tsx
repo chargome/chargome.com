@@ -8,14 +8,13 @@ import { SectionHeading } from '../sectionHeading';
 import { AboutType } from '../../model/md/About';
 import { Button } from '../button';
 
-type Props = AboutType;
-const About: React.FC<Props> = ({
+export const About = ({
   title,
   content,
   jpg,
   technologies,
   email,
-}) => {
+}: AboutType): JSX.Element => {
   const [sectionVisible, setSectionVisible] = React.useState(false);
 
   const entranceSpring = useSpring({
@@ -73,5 +72,3 @@ const About: React.FC<Props> = ({
     </VisibilitySensor>
   );
 };
-
-export default About;

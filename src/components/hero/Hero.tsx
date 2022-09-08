@@ -8,14 +8,13 @@ import { useColorTheme } from '../../hooks/useColorTheme';
 import { ColorThemeEnum } from '../../model';
 import useMediaQuery from '../../hooks/useMediaQuery';
 
-type Props = HeroType;
-const Hero: React.FC<Props> = ({
+export const Hero = ({
   introduction,
   introductionItaliano,
   firstName,
   lastName,
   content,
-}) => {
+}: HeroType): JSX.Element => {
   const introRef = React.useRef(null);
   const titleRef = React.useRef(null);
   const bioRef = React.useRef(null);

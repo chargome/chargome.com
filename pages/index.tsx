@@ -1,8 +1,6 @@
 import { NextPage, GetStaticProps } from 'next';
 
 import {
-  Nav,
-  Footer,
   Hero,
   About,
   Experience,
