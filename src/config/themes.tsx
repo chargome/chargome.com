@@ -5,9 +5,9 @@ import { ColorThemeEnum } from '../model';
 export const themes = [
   {
     key: ColorThemeEnum.light,
-    primary: '#cfe0c3',
-    secondary: '#40798c',
-    accent: '#70a9a1',
+    primary: '#000000',
+    secondary: '#5998aa',
+    accent: '#fffff',
     base: '#ffffff',
     icon: <HiOutlineSun className="w-5 h-5" />,
   },
@@ -20,7 +20,7 @@ export const themes = [
     icon: <HiOutlineMoon className="w-5 h-5" />,
   },
   {
-    key: ColorThemeEnum.sardegna,
+    key: ColorThemeEnum.dolcevita,
     primary: '#f7c407',
     secondary: '#ea7070',
     accent: '#9ee2c7',

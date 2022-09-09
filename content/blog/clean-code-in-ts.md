@@ -6,8 +6,6 @@ datePublished: 04-09-2022
 tags: ['typescript', 'books', 'clean-code']
 ---
 
-&nbsp;
-
 # 
 
 So I have just recently started reading [Clean Code by Robert C. Martin](https://www.goodreads.com/book/show/3735293-clean-code). I know I'm late to the party, but up until now I have only read articles that summarized the contents of the book and lived quite well with it. 
@@ -15,11 +13,7 @@ But for professional reasons I have decided to finally actually buy the book and
 
 I am doing so on the kindle cloud-reader on my laptop, as it allows me to easily highlight passages and take notes.
 
-&nbsp;
-
 I'll use this post as a summary for myself (and you since you apparently have nothing better to do) to document my main heuristics in the book. Additionally I'll keep my code examples in Typescript and not in Java as in the book. Search for the 🦧 to jump between chapters.
-
-&nbsp;
 
 <sup><sub>
 All of the heuristics, examples and code snippets are based on: 

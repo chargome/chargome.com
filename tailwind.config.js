@@ -17,6 +17,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        'sans': ["'Open Sans', sans-serif"],
         'mono': ["'Roboto Mono', monospace"]
       }
     },
@@ -48,7 +49,7 @@ module.exports = {
         },
       },
       {
-        sardegna: {
+        dolcevita: {
           ...require("daisyui/src/colors/themes")["[data-theme=bumblebee]"],
           primary: '#f7c407',
           secondary: '#ea7070',

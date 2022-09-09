@@ -6,8 +6,6 @@ datePublished: 03-09-2022
 tags: ['react', 'next.js', 'typescript', 'prism']
 ---
 
-&nbsp;
-
 ## Problem
 
 Out of the box, .md files parsed with [remark](https://remark.js.org/) do not add syntax highlighting to the generated html. For injecting the neccessary styles, we will make use of a popular library that accomplishes this task for us: [Prism](https://prismjs.com/).
@@ -29,7 +27,6 @@ Assuming you have a [next.js app with remark](https://nextjs.org/blog/markdown) 
 ```
 npm i remark-prism
 ```
-&nbsp;
 
 Next, [download a prism theme of your choice](https://prismjs.com/download.html), and copy only the css file included to your repo (e.g. to a styles folder). Include it in your app:
 
@@ -37,7 +34,6 @@ Next, [download a prism theme of your choice](https://prismjs.com/download.html)
 // e.g. in _app.tsx
 import 'path/to/your/styles/prism.css'
 ```
-&nbsp;
 
 Alternatively you can include the stylesheet from a cdn:
 ```ts
@@ -47,7 +43,6 @@ Alternatively you can include the stylesheet from a cdn:
   rel="stylesheet"
 />
 ```
-&nbsp;
 
 ### 2: create your md parser
 For parsing your md files, you have to add the remark-prism library to your remark pipeline:
@@ -64,7 +59,6 @@ const parseMdContent = (rawContent: string): string => {
   return processedContent.toString();
 };
 ```
-&nbsp;
 
 ## Outcome
 The return value now contains the generated html with all classes appropriately set for highlighting using the prism css class we included earlier.

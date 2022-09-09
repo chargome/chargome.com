@@ -1,15 +1,12 @@
-import {
-  Container,
-  ContactArea,
-} from './Footer.css';
 import { FooterType } from '../../model/md/Footer';
 
 const Footer: React.FC<FooterType> = ({ content }) => (
-  <Container>
-    <ContactArea
+  <div className="bg-primary flex items-center justify-center">
+    <div
+      className="p-4 text-2xs text-secondary"
       dangerouslySetInnerHTML={{ __html: content }}
     />
-  </Container>
+  </div>
 );
 
 export default Footer;

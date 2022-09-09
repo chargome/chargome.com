@@ -60,7 +60,7 @@ export const Hero = ({
           style={introSpring}
           className="text-3xl text-secondary"
         >
-          {colorTheme === ColorThemeEnum.sardegna ? introductionItaliano : introduction}
+          {colorTheme === ColorThemeEnum.dolcevita ? introductionItaliano : introduction}
         </animated.h2>
         <animated.h1
           style={titleSpring}

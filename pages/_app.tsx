@@ -1,14 +1,11 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { ThemeProvider } from 'styled-components';
 import '@fontsource/roboto-mono';
 import '@fontsource/open-sans';
 
-import GlobalStyle from '../src/styles/globalStyle.css';
 import '../src/styles/globals.css';
 import '../src/styles/prism.css';
-import myTheme from '../src/styles/theme';
 
 const App = ({ Component, pageProps }: AppProps): JSX.Element => (
   <>
@@ -24,10 +21,7 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => (
       <link rel="manifest" href="/manifest.json" />
       <meta name="theme-color" content="#317EFB" />
     </Head>
-    <ThemeProvider theme={myTheme}>
-      <GlobalStyle />
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <Component {...pageProps} />
   </>
 );
 

@@ -1,8 +1,5 @@
 import Link from 'next/link';
 import { BlogType } from '../../model/md/Blog';
-import { Box } from '../box';
-import { Typography } from '../typography';
-import { List, ListItem } from './BlogList.css';
 
 interface Props {
   blogs: BlogType[];
@@ -10,32 +7,28 @@ interface Props {
 
 // eslint-disable-next-line import/prefer-default-export
 export const BlogList = ({ blogs }: Props): JSX.Element => (
-  <List>
+  <ul>
     {blogs.map((blog) => (
-      <ListItem key={blog.id}>
+      <li key={blog.id}>
         <Link href={`/blog/${blog.id}`}>
-          <Box
-            border="2px solid transparent"
-            borderLeftColor="primary"
-            borderTopColor="primary"
-            borderRadius="3px"
-            p={3}
+          <div
+            className="border-2 border-transparent border-l-secondary border-t-secondary p-5 rounded-tl-md cursor-pointer transition hover:-translate-x-2"
           >
-            <Typography variant="h4">
+            <h4 className="font-mono text-lg text-primary">
               {blog.title}
-            </Typography>
-            <Typography variant="body">
+            </h4>
+            <h5 className="font-mono text-md">
               {blog.subtitle}
-            </Typography>
-            <Typography variant="bodySm" color="teaGreen">
+            </h5>
+            <div className="font-mono text-sm">
               {blog.datePublished}
-            </Typography>
-            <Typography variant="bodySm" color="teaGreen">
+            </div>
+            <div className="font-mono text-sm text-accent">
               {` #${blog.tags.join(' #')}`}
-            </Typography>
-          </Box>
+            </div>
+          </div>
         </Link>
-      </ListItem>
+      </li>
     ))}
-  </List>
+  </ul>
 );

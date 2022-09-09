@@ -3,6 +3,7 @@ import React from 'react';
 import { HiOutlineColorSwatch, HiChevronDown } from 'react-icons/hi';
 import { themes } from '../../config/themes';
 import { useColorTheme } from '../../hooks/useColorTheme';
+import { ColorThemeEnum } from '../../model';
 import { Button } from '../button';
 import { ThemePreview } from '../themePreview';
 
@@ -32,7 +33,7 @@ export const ThemeSelector = (): JSX.Element => {
                   onClick={() => setColorTheme(theme.key)}
                 >
                   <ThemePreview
-                    name={theme.key}
+                    name={theme.key === ColorThemeEnum.dolcevita ? 'dolce vita' : theme.key}
                     icon={theme.icon}
                     primary={theme.primary}
                     bg={theme.base}

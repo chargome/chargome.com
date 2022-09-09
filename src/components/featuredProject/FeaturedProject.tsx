@@ -2,22 +2,15 @@ import React from 'react';
 import Router from 'next/router';
 import { useSpring, useChain, animated } from 'react-spring';
 
+import { FaArrowLeft } from 'react-icons/fa';
 import { ProjectType } from '../../model/md/Project';
-import {
-  Container,
-  VideoArea,
-  Heading,
-  SubHeading,
-  Content,
-  BackButton,
-} from './FeaturedProject.css';
 
-const FeaturedProject: React.FC<ProjectType> = ({
+const FeaturedProject = ({
   title,
   subtitle,
   gif,
   content,
-}) => {
+}: ProjectType): JSX.Element => {
   const arrowRef = React.useRef(null);
   const titleRef = React.useRef(null);
   const subTitleRef = React.useRef(null);
@@ -66,19 +59,28 @@ const FeaturedProject: React.FC<ProjectType> = ({
   );
 
   return (
-    <Container>
-      <div>
-        <BackButton onClick={() => Router.back()} style={arrowSpring} />
-        <Heading style={titleSpring}>{title}</Heading>
-        <SubHeading style={subTitleSpring}>{subtitle}</SubHeading>
-        <animated.div style={contentSpring}>
-          <Content
+    <div
+      className="min-h-screen bg-base-100 flex justify-center px-10 md:px-20"
+    >
+      <animated.div
+        className="absolute top-8 left-8 text-secondary cursor-pointer hover:text-secondary-focus"
+        onClick={() => Router.back()}
+        style={arrowSpring}
+      >
+        <FaArrowLeft className="w-7 h-7" />
+      </animated.div>
+      <div className="pt-20 px-5 lg:px-20 flex flex-col gap-4">
+        <animated.div className="text-3xl font-mono text-primary" style={titleSpring}>{title}</animated.div>
+        <animated.div className="text-xl font-mono text-accent" style={subTitleSpring}>{subtitle}</animated.div>
+        <animated.div ref={contentRef} style={contentSpring}>
+          <div
+            className="prose"
             dangerouslySetInnerHTML={{ __html: content }}
           />
-          <VideoArea src={gif} />
+          <img className="mt-10" alt={title} src={gif} />
         </animated.div>
       </div>
-    </Container>
+    </div>
   );
 };
 

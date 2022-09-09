@@ -1,17 +1,15 @@
 import { BlogType } from '../../model/md/Blog';
 import { BlogList } from '../blogList/BlogList';
-import { Box } from '../box/Box.css';
-import { Typography } from '../typography';
 
 interface Props {
   data: BlogType[];
 }
 
 export const BlogOverview = ({ data }: Props): JSX.Element => (
-  <Box bg="secondary" minHeight="100vh" py={5} px={[2, 5]}>
-    <Typography variant="h1">_el Blog</Typography>
-    <Box p={2} mt={4}>
+  <div className="bg-base-100 min-h-screen py-20 px-5 md:px-10">
+    <h1 className="text-2xl text-primary">_el Blog</h1>
+    <div className="mt-5 p-4">
       <BlogList blogs={data} />
-    </Box>
-  </Box>
+    </div>
+  </div>
 );
