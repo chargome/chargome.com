@@ -1,30 +1,24 @@
 import React from 'react';
 
-import {
-  Container,
-  ProjectContainer,
-} from './Projects.css';
-import {
-  SectionHeading,
-} from '../../styles/util.css';
-import { ProjectType } from '../../entity/md/Project';
-import ProjectCard from './ProjectCard';
+import { ProjectType } from '../../model/md/Project';
+import { SectionHeading } from '../sectionHeading';
+import { ProjectCard } from './ProjectCard';
 
-
-type Props = {
+interface Props {
   projects: ProjectType[];
-};
-const Projects: React.FC<Props> = ({ projects }) => (
-  <Container>
-    <SectionHeading align="left" mx={[20, 50, 100]} fontSize={[25, 30, 40]}>
-      some projects
+}
+
+const Projects = ({ projects }: Props): JSX.Element => (
+  <div className="min-h-screen bg-base-100 mx-6 md:mx-10 lg:mx-20 xl:mx-40">
+    <SectionHeading align="left">
+      some of my projects
     </SectionHeading>
-    <ProjectContainer>
+    <div className="flex flex-col gap-6 items-center my-10">
       {
         projects.map(ProjectCard)
       }
-    </ProjectContainer>
-  </Container>
+    </div>
+  </div>
 );
 
 export default Projects;

@@ -11,6 +11,6 @@ featured: true
 ---
 
 This custom canban app is used for managing container batches in real time.
-On the frontend it uses *React*, the backend consists of a RESTful serverless architecture using *API Gateway*, *AWS Lambda*, *Cognito* and *AWS DynamoDB*.
+On the frontend it uses `React`, the backend consists of a RESTful serverless architecture using `API Gateway`, `AWS Lambda`, `Cognito` and `AWS DynamoDB`.
 The software is used by our client in the [Cargo Center Graz](http://www.cargo-center-graz.at/) since 2018.
 

@@ -1,27 +1,25 @@
 import React from 'react';
-import { useSpring, useChain } from 'react-spring';
+import { useSpring, useChain, animated } from 'react-spring';
 
-import {
-  HeroContainer,
-  TextContainer,
-  Title,
-  SmallHeader,
-  AboutText,
-} from './Hero.css';
 import Particles from '../particles/Particles';
 
-import { HeroType } from '../../entity/md/Hero';
+import { HeroType } from '../../model/md/Hero';
+import { useColorTheme } from '../../hooks/useColorTheme';
+import { ColorThemeEnum } from '../../model';
+import useMediaQuery from '../../hooks/useMediaQuery';
 
-type Props = HeroType;
-const Hero: React.FC<Props> = ({
+export const Hero = ({
   introduction,
+  introductionItaliano,
   firstName,
   lastName,
   content,
-}) => {
+}: HeroType): JSX.Element => {
   const introRef = React.useRef(null);
   const titleRef = React.useRef(null);
   const bioRef = React.useRef(null);
+  const { colorTheme } = useColorTheme();
+  const isWidescreen = useMediaQuery('(min-width: 768px)');
 
   const introSpring = useSpring({
     ref: introRef,
@@ -56,30 +54,30 @@ const Hero: React.FC<Props> = ({
   useChain([introRef, titleRef, bioRef], [0.5, 0.9, 1.3]);
 
   return (
-    <HeroContainer>
-      <TextContainer
-        width={[7 / 8, 4 / 5, 2 / 3, 1 / 2]}
-      >
-        <SmallHeader
+    <div className="w-full h-screen grid bg-base-100 bg-fixed">
+      <div className="grid self-center justify-self-center w-10/12 md:w-4/5 lg:2/3 xl:w-1/2">
+        <animated.h2
           style={introSpring}
-          fontSize={[20, 25, 30]}
+          className="text-3xl text-secondary"
         >
-          {introduction}
-        </SmallHeader>
-        <Title
+          {colorTheme === ColorThemeEnum.dolcevita ? introductionItaliano : introduction}
+        </animated.h2>
+        <animated.h1
           style={titleSpring}
-          fontSize={[40, 50, 70]}
+          className="text-6xl text-primary font-mono"
         >
           {`${firstName} ${lastName}.`}
-        </Title>
-        <AboutText
-          fontSize={[15, 18]}
+        </animated.h1>
+        <animated.h3
           style={bioSpring}
           dangerouslySetInnerHTML={{ __html: content }}
+          className="text-lg text-accent"
         />
-      </TextContainer>
-      <Particles />
-    </HeroContainer>
+      </div>
+      {
+        isWidescreen && colorTheme === ColorThemeEnum.dark && <Particles darkParticles={false} />
+      }
+    </div>
   );
 };
 

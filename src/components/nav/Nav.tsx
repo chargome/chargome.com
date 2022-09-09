@@ -1,19 +1,15 @@
 import React from 'react';
-import { useSpring, useTransition, useChain } from 'react-spring';
-import { FaOutdent, FaIndent } from 'react-icons/fa';
-
 import {
-  IconContainer,
-  MenuContainer,
-  MenuList,
-  MenuListItem,
-  MenuAnchor,
-} from './Nav.css';
-import { sections as menuItems } from '../../../config';
+  useSpring, useTransition, useChain, animated,
+} from 'react-spring';
+import { FaOutdent, FaIndent } from 'react-icons/fa';
+import { useRouter } from 'next/router';
 
-const Nav: React.FC = () => {
+import { menuItems } from '../../config';
+
+export const Nav: React.FC = () => {
   const [open, setOpen] = React.useState(false);
-
+  const router = useRouter();
   const navRef = React.useRef(null);
   const liRef = React.useRef(null);
 
@@ -24,11 +20,11 @@ const Nav: React.FC = () => {
   });
 
   const liTransitions = useTransition(
-    open ? menuItems.list : [],
+    open ? menuItems : [],
     (item) => item.title,
     {
       ref: liRef,
-      trail: 400 / menuItems.list.length,
+      trail: 400 / menuItems.length,
       from: { opacity: 0, transform: 'translateY(20px)' },
       enter: { opacity: 1, transform: 'translateY(0)' },
       leave: { opacity: 0, transform: 'translateY(20px)' },
@@ -40,46 +36,54 @@ const Nav: React.FC = () => {
     open ? 0.4 : 0.6,
   ]);
 
-  const scrollToSection = (id: string) => {
+  const navigate = (path: string) => {
+    router.push(path);
     setOpen(false);
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView();
-    }
   };
 
   return (
     <>
-      <IconContainer
-        isOpen={open}
+      <div
+        className="fixed top-5 right-5 z-30 transition cursor-pointer text-primary"
         onClick={() => setOpen((_open) => !_open)}
-        // style={iconSpring}
+        onKeyPress={(e) => (e.key === 'Enter' ? setOpen((_open) => !_open) : null)}
+        tabIndex={0}
+        role="button"
       >
-        {open ? <FaIndent /> : <FaOutdent />}
-      </IconContainer>
-      <MenuContainer style={menuContainerSpring}>
-        <MenuList
-          textAlign="center"
-          fontSize={[20, 30, 40]}
-          fontWeight="bold"
+        {
+          open
+            ? <FaIndent className="w-7 h-7" />
+            : <FaOutdent className="w-7 h-7" />
+        }
+      </div>
+      <animated.div
+        style={menuContainerSpring}
+        className="fixed top-0 right-0 bottom-0 min-h-screen bg-secondary z-10 overflow-scroll"
+      >
+        <ul
+          className="list-none text-center text-3xl font-bold"
         >
           {
             liTransitions.map(({ item, key, props }) => (
-              <MenuListItem
+              <animated.li
+                className="my-14"
                 key={key}
                 style={props}
-                my={[4, 5]}
               >
-                <MenuAnchor onClick={() => scrollToSection(item.id)}>
+                <div
+                  className="w-40 mx-auto no-underline flex justify-center p-1 border-y-2 border-transparent transition-all text-primary cursor-pointer hover:text-accent hover:border-accent"
+                  onClick={() => navigate(item.path)}
+                  onKeyPress={(e) => (e.key === 'Enter' ? navigate(item.path) : null)}
+                  tabIndex={0}
+                  role="button"
+                >
                   {item.title}
-                </MenuAnchor>
-              </MenuListItem>
+                </div>
+              </animated.li>
             ))
           }
-        </MenuList>
-      </MenuContainer>
+        </ul>
+      </animated.div>
     </>
   );
 };
-
-export default Nav;

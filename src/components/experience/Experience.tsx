@@ -2,16 +2,11 @@ import React from 'react';
 import { useSpring, animated, config } from 'react-spring';
 import VisibilitySensor from 'react-visibility-sensor';
 
-import {
-  Container,
-} from './Experience.css';
-import { ExperienceType } from '../../entity/md/Experience';
+import { ExperienceType } from '../../model/md/Experience';
 import VerticalTabs, { ElementType } from '../verticalTabView/VerticalTabView';
-import { SectionHeading } from '../../styles/util.css';
+import { SectionHeading } from '../sectionHeading';
 
-
-type Props = ExperienceType;
-const Experience: React.FC<Props> = ({ workData, eduData }) => {
+export const Experience = ({ workData, eduData }: ExperienceType): JSX.Element => {
   const [isVisible, setIsVisible] = React.useState(false);
 
   const entranceSpring = useSpring({
@@ -28,6 +23,7 @@ const Experience: React.FC<Props> = ({ workData, eduData }) => {
     html: work.content,
     link: work.link,
   }));
+
   const eduElements: ElementType[] = eduData.map((edu) => ({
     id: edu.id,
     title: edu.shortTitle,
@@ -42,22 +38,28 @@ const Experience: React.FC<Props> = ({ workData, eduData }) => {
     <VisibilitySensor
       partialVisibility
       offset={{ bottom: 10 }}
-      onChange={(visible) => setIsVisible(visible)}
+      onChange={(visible: boolean) => setIsVisible(visible)}
     >
-      <Container>
+      <div className="min-h-screen bg-base-100 mx-4 md:mx-10 lg:mx-20 xl:mx-40">
         <animated.div style={entranceSpring}>
-          <SectionHeading align="left" mx={[20, 50, 100]} mt={[10]} fontSize={[25, 30, 40]}>
-            work experience
-          </SectionHeading>
-          <VerticalTabs elements={workElements} />
-          <SectionHeading align="right" mx={[20, 50, 100]} mt={[200]} fontSize={[25, 30, 40]}>
-            academic experience
-          </SectionHeading>
-          <VerticalTabs elements={eduElements} />
+          <div className="min-h-screen">
+            <SectionHeading align="left">
+              work experience
+            </SectionHeading>
+            <div className="p-10">
+              <VerticalTabs elements={workElements} />
+            </div>
+          </div>
+          <div className="min-h-screen flex flex-col items-end">
+            <SectionHeading align="right">
+              academic experience
+            </SectionHeading>
+            <div className="p-10">
+              <VerticalTabs elements={eduElements} />
+            </div>
+          </div>
         </animated.div>
-      </Container>
+      </div>
     </VisibilitySensor>
   );
 };
-
-export default Experience;
