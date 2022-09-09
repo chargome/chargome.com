@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface Props {
   color?: 'primary' | 'secondary' | 'accent';
   variant?: 'outlined' | 'ghost';

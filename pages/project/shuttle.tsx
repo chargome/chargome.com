@@ -4,7 +4,6 @@ import { ProjectType } from '../../src/model/md/Project';
 import { getSingleProject } from '../../src/lib/mdLoader';
 import { FeaturedProject } from '../../src/components';
 
-
 type Props = {
   projectData: ProjectType;
 };
@@ -19,6 +18,5 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   };
 };
-
 
 export default Shuttle;

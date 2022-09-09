@@ -7,14 +7,14 @@ import {
 import { ContactType } from '../../model/md/Contact';
 import { Button } from '../button';
 
-const Contact: React.FC<ContactType> = ({
+const Contact = ({
   greeting,
   buttonText,
   mailAdress,
   insta,
   linkedIn,
   github,
-}) => (
+}: ContactType): JSX.Element => (
   <div className="min-h-screen flex gap-20 flex-col items-center justify-center bg-secondary">
     <h2 className="text-3xl font-mono">{greeting}</h2>
     <a href={`mailto:${mailAdress}`}>

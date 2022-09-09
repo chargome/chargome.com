@@ -25,7 +25,7 @@ export const About = ({
     <VisibilitySensor
       partialVisibility
       offset={{ bottom: 10 }}
-      onChange={(visible) => setSectionVisible(visible)}
+      onChange={(visible: boolean) => setSectionVisible(visible)}
     >
       <div
         className="bg-base-100 min-h-screen flex flex-col md:flex-row items-center justify-center"

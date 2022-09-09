@@ -1,3 +1,4 @@
+import React from 'react';
 import { FooterType } from '../../model/md/Footer';
 
 const Footer: React.FC<FooterType> = ({ content }) => (

@@ -1,24 +1,14 @@
+/** @type {import('eslint').Linter.Config} */
 module.exports = {
-  extends: [
-    'airbnb-typescript',
-    'airbnb/hooks',
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:@typescript-eslint/recommended-requiring-type-checking',
-  ],
-  parserOptions: {
-    project: './tsconfig.json',
-  },
+  extends: ['next/core-web-vitals', 'airbnb-base'],
   rules: {
-    'react/react-in-jsx-scope': 'off',
-    'react/jsx-props-no-spreading': ['off'],
-    'react/prop-types': 'off',
-    'react/require-default-props': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    'import/prefer-default-export': 'off',
-    'react/no-danger': 'off',
+    'import/extensions': 0,
+    'import/prefer-default-export': 0,
+    'no-unused-vars': 0,
+    'no-shadow': 0,
+    '@next/next/no-img-element': 0,
   },
   globals: {
-    React: 'writable',
-  }
+    JSX: true,
+  },
 };

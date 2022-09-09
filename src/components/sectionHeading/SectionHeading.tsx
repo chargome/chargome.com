@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface Props {
   align: 'left' | 'right';
   children?: React.ReactNode;

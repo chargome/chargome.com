@@ -38,7 +38,7 @@ export const Experience = ({ workData, eduData }: ExperienceType): JSX.Element =
     <VisibilitySensor
       partialVisibility
       offset={{ bottom: 10 }}
-      onChange={(visible) => setIsVisible(visible)}
+      onChange={(visible: boolean) => setIsVisible(visible)}
     >
       <div className="min-h-screen bg-base-100 mx-4 md:mx-10 lg:mx-20 xl:mx-40">
         <animated.div style={entranceSpring}>
