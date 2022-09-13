@@ -65,7 +65,6 @@ The return value now contains the generated html with all classes appropriately 
 
 You can check out a full implementation for this website [here](https://github.com/chargome/chargome.com).
 
-I'm gonna be honest here, I just created this article to test out my blog and the syntax highlighting for myself. 🦧
 
 
 
