@@ -8,8 +8,8 @@ tags: ['typescript', 'books', 'clean-code']
 
 # 
 
-So I have just recently started reading [Clean Code by Robert C. Martin](https://www.goodreads.com/book/show/3735293-clean-code). I know I'm late to the party, but up until now I have only read articles that summarized the contents of the book and lived quite well with it. 
-But for professional reasons I have decided to finally actually buy the book and read it front to back.
+Having recently started reading [Clean Code by Robert C. Martin](https://www.goodreads.com/book/show/3735293-clean-code), I am well aware that I'm late to the party. Up until now I have only read articles that summarized the contents of the book and lived quite well with it. 
+Now, for professional reasons I have decided to finally actually buy the book and read it front to back.
 
 I am doing so on the kindle cloud-reader on my laptop, as it allows me to easily highlight passages and take notes.
 
@@ -92,6 +92,8 @@ The function above contains the same functionality as the getThem function, but 
 - *functions should do one thing, they should do it well, thy should do it only*
 - avoid mixing levels of abstractions within functions (e.g. `getSomeHighLevelValue()` and `.split(' #')`)
 - make the function top-down readable (see the TO technique below)
+- use consistent naming
+- use descriptive naming, don't bee afraid of long function names
 
 ### the "TO" technique
 **To** include the setups and teardowns, we include setups, then we include the test page content, and then we include the teardowns.
@@ -100,4 +102,7 @@ The function above contains the same functionality as the getThem function, but 
 
 **To** include the suite setup, we search the parent hierarchy for the “SuiteSetUp” page and add an include statement with the path of that page. To search the parent…
 
+### switch statements
+
+Switch statements are seldomly small but complex. They are hard to maintain, and usually grow with domain changes. If not avoided, they should be deeply nested in the code, in a factory that creates polymorphic class instances. 
 
