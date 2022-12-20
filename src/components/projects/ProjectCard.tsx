@@ -18,7 +18,7 @@ export const ProjectCard = ({
         <h4 className="text-lg font-mono text-secondary">
           {`[${subtitle}]`}
         </h4>
-        <div className="text-sm">{technologies.join(' #')}</div>
+        <div className="text-sm">#{technologies.join(' #')}</div>
       </div>
     </div>
   </Link>

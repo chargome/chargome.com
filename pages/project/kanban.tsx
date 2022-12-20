@@ -11,7 +11,7 @@ type Props = {
 const Kanban: NextPage<Props> = ({ projectData }) => <FeaturedProject {...projectData} />;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const projectData = await getSingleProject('5-kanban');
+  const projectData = await getSingleProject('6-kanban');
   return {
     props: {
       projectData,
