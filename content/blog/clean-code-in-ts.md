@@ -106,3 +106,7 @@ The function above contains the same functionality as the getThem function, but 
 
 Switch statements are seldomly small but complex. They are hard to maintain, and usually grow with domain changes. If not avoided, they should be deeply nested in the code, in a factory that creates polymorphic class instances. 
 
+### function arguments
+
+More than two arguments per functions hould be avoided, since testing all combinations of arguments can become cumbersome. Uncle Bob states it this way: "_One input argument is the next best thing to no arguments._"
+
