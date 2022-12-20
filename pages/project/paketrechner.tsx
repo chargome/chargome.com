@@ -11,7 +11,7 @@ type Props = {
 const Paketrechner: NextPage<Props> = ({ projectData }) => <FeaturedProject {...projectData} />;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const projectData = await getSingleProject('3-paketrechner');
+  const projectData = await getSingleProject('5-paketrechner');
   return {
     props: {
       projectData,
