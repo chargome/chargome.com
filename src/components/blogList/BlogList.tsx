@@ -5,10 +5,16 @@ interface Props {
   blogs: BlogType[];
 }
 
+const compareDate = (a: BlogType, b: BlogType) => {
+  const d1 = new Date(a.datePublished);
+  const d2 = new Date(b.datePublished);
+  return d1 < d2 ? 1 : -1;
+};
+
 // eslint-disable-next-line import/prefer-default-export
 export const BlogList = ({ blogs }: Props): JSX.Element => (
   <ul>
-    {blogs.map((blog) => (
+    {blogs.sort(compareDate).map((blog) => (
       <li key={blog.id}>
         <Link href={`/blog/${blog.id}`}>
           <div
