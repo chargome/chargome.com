@@ -93,6 +93,5 @@ export const getBlogData = async () => getFolderData('/blog', true);
 export const getBlogPostData = async (id: string): Promise<BlogType> => {
   const fullPath = path.join(getPath('blog/'), `${id}.md`);
   const mdData = await parseMdData(fullPath, id) as BlogType;
-  // const highlightedContent = await highlightHtml(mdData.content);
   return mdData;
 };

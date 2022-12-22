@@ -1,8 +1,8 @@
 ---
 id: clean-code-in-ts
 title: Clean code in Typescript
-subtitle: Catching up with my Uncle Bob 
-datePublished: 04-09-2022
+subtitle: Catching up with Uncle Bob 
+datePublished: "2022-09-04"
 tags: ['typescript', 'books', 'clean-code']
 ---
 
@@ -110,3 +110,4 @@ Switch statements are seldomly small but complex. They are hard to maintain, and
 
 More than two arguments per functions hould be avoided, since testing all combinations of arguments can become cumbersome. Uncle Bob states it this way: "_One input argument is the next best thing to no arguments._"
 
+### TBD :^)

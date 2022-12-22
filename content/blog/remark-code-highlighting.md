@@ -2,7 +2,7 @@
 id: remark-code-highlighting
 title: Setup code highlighting for remark 
 subtitle: Be a bright ass light in this dark ass world
-datePublished: 03-09-2022
+datePublished: "2022-09-03"
 tags: ['react', 'next.js', 'typescript', 'prism']
 ---
 
