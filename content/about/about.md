@@ -2,10 +2,15 @@
 title: About me
 webp: /images/gomez.webp
 jpg: /images/gmz.jpg
-technologies: ['React, NextJS, Svelte', 'Typescript, Javascript, Python', 'AWS, GCP, Firebase']
+technologies:
+    [
+        'React, NestJS, Svelte, Tailwind',
+        'Typescript, Javascript, Python',
+        'AWS, GCP, Terraform, GH Actions',
+    ]
 email: charly@fago.solutions
 ---
 
-Currently living and coding in Valencia, Spain.
+Currently coding from Vienna | Valencia.
 
 I love building software with:

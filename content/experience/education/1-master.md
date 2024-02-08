@@ -7,8 +7,6 @@ range: 2019 - 2020
 link: https://www.technikum-wien.at/en/
 ---
 
-- Master of Science in Engineering
+-   Master of Science in Engineering
 
-- Double Degree with [Marconi University in Rome](https://www.unimarconi.it/)
-
-- Master thesis: *Development of scalable fullstack web-applications on serverless architectures using GraphQL*
+-   Double Degree with [Marconi University in Rome](https://www.unimarconi.it/)
